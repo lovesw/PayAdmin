@@ -9,22 +9,22 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings({"serial", "unchecked"})
 public abstract class BaseRoleMenu<M extends BaseRoleMenu<M>> extends Model<M> implements IBean {
 
-    public M setRoleId(java.lang.Long roleId) {
-        set("role_id", roleId);
-        return (M) this;
-    }
+	public M setRoleId(java.lang.Long roleId) {
+		set("role_id", roleId);
+		return (M)this;
+	}
+	
+	public java.lang.Long getRoleId() {
+		return getLong("role_id");
+	}
 
-    public java.lang.Long getRoleId() {
-        return getLong("role_id");
-    }
-
-    public M setMid(java.lang.Long mid) {
-        set("mid", mid);
-        return (M) this;
-    }
-
-    public java.lang.Long getMid() {
-        return getLong("mid");
-    }
+	public M setMid(java.lang.Long mid) {
+		set("mid", mid);
+		return (M)this;
+	}
+	
+	public java.lang.Long getMid() {
+		return getLong("mid");
+	}
 
 }

@@ -55,11 +55,11 @@ public class UserAction extends BaseController {
     /**
      * 重置密码
      *
-     * @param id 员工编号
+     * @param userId 员工编号
      */
     @Before(Put.class)
-    public void reset(String id) {
-        result(userService.resetService(id));
+    public void reset(String userId) {
+        result(userService.resetService(userId));
     }
 
     /**

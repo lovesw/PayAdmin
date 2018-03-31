@@ -9,49 +9,49 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings({"serial", "unchecked"})
 public abstract class BaseCompany<M extends BaseCompany<M>> extends Model<M> implements IBean {
 
-    public M setId(java.lang.String id) {
-        set("id", id);
-        return (M) this;
-    }
+	public M setId(java.lang.String id) {
+		set("id", id);
+		return (M)this;
+	}
+	
+	public java.lang.String getId() {
+		return getStr("id");
+	}
 
-    public java.lang.String getId() {
-        return getStr("id");
-    }
+	public M setName(java.lang.String name) {
+		set("name", name);
+		return (M)this;
+	}
+	
+	public java.lang.String getName() {
+		return getStr("name");
+	}
 
-    public M setName(java.lang.String name) {
-        set("name", name);
-        return (M) this;
-    }
+	public M setContent(java.lang.String content) {
+		set("content", content);
+		return (M)this;
+	}
+	
+	public java.lang.String getContent() {
+		return getStr("content");
+	}
 
-    public java.lang.String getName() {
-        return getStr("name");
-    }
+	public M setUrl(java.lang.String url) {
+		set("url", url);
+		return (M)this;
+	}
+	
+	public java.lang.String getUrl() {
+		return getStr("url");
+	}
 
-    public M setContent(java.lang.String content) {
-        set("content", content);
-        return (M) this;
-    }
-
-    public java.lang.String getContent() {
-        return getStr("content");
-    }
-
-    public M setUrl(java.lang.String url) {
-        set("url", url);
-        return (M) this;
-    }
-
-    public java.lang.String getUrl() {
-        return getStr("url");
-    }
-
-    public M setStatus(java.lang.Boolean status) {
-        set("status", status);
-        return (M) this;
-    }
-
-    public java.lang.Boolean getStatus() {
-        return get("status");
-    }
+	public M setStatus(java.lang.Boolean status) {
+		set("status", status);
+		return (M)this;
+	}
+	
+	public java.lang.Boolean getStatus() {
+		return get("status");
+	}
 
 }

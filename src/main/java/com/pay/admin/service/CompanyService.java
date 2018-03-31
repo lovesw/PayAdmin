@@ -1,5 +1,6 @@
 package com.pay.admin.service;
 
+import cn.hutool.core.util.StrUtil;
 import com.pay.data.utils.IdUtils;
 import com.pay.user.model.Company;
 
@@ -39,6 +40,9 @@ public class CompanyService {
      * @return 返回值
      */
     public boolean deleteService(String id) {
+        if (StrUtil.isBlank(id)) {
+            return false;
+        }
         return Company.dao.deleteById(id);
     }
 

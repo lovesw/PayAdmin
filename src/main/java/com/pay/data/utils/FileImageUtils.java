@@ -73,7 +73,8 @@ public class FileImageUtils {
      * @return 操作结果
      */
     public static boolean isSpecifySuffixUtils(UploadFile file, String suffix) {
-        return suffix.equals(getSuffixUtils(file.getOriginalFileName()));
+        System.out.println(file.getOriginalFileName());
+        return suffix.equalsIgnoreCase(getSuffixUtils(file.getOriginalFileName()));
     }
 
     /**
@@ -126,7 +127,6 @@ public class FileImageUtils {
      */
     public static byte[] readImageUtils(String fileName, int type) {
         String path = readUrlUtils(type) + fileName;
-        System.out.println(path);
         File file = new File(path);
         if (!file.isFile()) {
             //如果文件不是文件，就直接就设置为默认图片

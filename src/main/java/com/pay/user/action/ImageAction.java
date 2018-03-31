@@ -25,7 +25,6 @@ public class ImageAction extends BaseController {
     public void image(int type, int card) {
         String userId = getUserId();
         String fileName = imageService.findImageNameService(userId, card, type);
-        System.out.println(fileName);
         byte[] inputStream = FileImageUtils.readImageUtils(fileName, type);
         if (inputStream != null) {
             success(Base64.encode(inputStream));

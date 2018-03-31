@@ -48,11 +48,11 @@ public class UserService {
     /**
      * 删除员工信息
      *
-     * @param id 员工唯一编号
+     * @param userId 员工唯一编号
      * @return 操作结果
      */
-    public boolean deleteService(String id) {
-        return !StrUtil.isBlank(id) && User.dao.deleteById(id);
+    public boolean deleteService(String userId) {
+        return !StrUtil.isBlank(userId) && User.dao.deleteById(userId);
     }
 
     /**

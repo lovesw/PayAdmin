@@ -9,67 +9,67 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings({"serial", "unchecked"})
 public abstract class BasePunish<M extends BasePunish<M>> extends Model<M> implements IBean {
 
-    public M setId(java.lang.String id) {
-        set("id", id);
-        return (M) this;
-    }
+	public M setId(java.lang.String id) {
+		set("id", id);
+		return (M)this;
+	}
+	
+	public java.lang.String getId() {
+		return getStr("id");
+	}
 
-    public java.lang.String getId() {
-        return getStr("id");
-    }
+	public M setUserId(java.lang.String userId) {
+		set("user_id", userId);
+		return (M)this;
+	}
+	
+	public java.lang.String getUserId() {
+		return getStr("user_id");
+	}
 
-    public M setUserId(java.lang.String userId) {
-        set("user_id", userId);
-        return (M) this;
-    }
+	public M setContent(java.lang.String content) {
+		set("content", content);
+		return (M)this;
+	}
+	
+	public java.lang.String getContent() {
+		return getStr("content");
+	}
 
-    public java.lang.String getUserId() {
-        return getStr("user_id");
-    }
+	public M setExecute(java.lang.String execute) {
+		set("execute", execute);
+		return (M)this;
+	}
+	
+	public java.lang.String getExecute() {
+		return getStr("execute");
+	}
 
-    public M setContent(java.lang.String content) {
-        set("content", content);
-        return (M) this;
-    }
+	public M setStatus(java.lang.Integer status) {
+		set("status", status);
+		return (M)this;
+	}
+	
+	public java.lang.Integer getStatus() {
+		return getInt("status");
+	}
 
-    public java.lang.String getContent() {
-        return getStr("content");
-    }
+	public M setDate(java.util.Date date) {
+		set("date", date);
+		return (M)this;
+	}
+	
+	public java.util.Date getDate() {
+		return get("date");
+	}
 
-    public M setExecute(java.lang.String execute) {
-        set("execute", execute);
-        return (M) this;
-    }
-
-    public java.lang.String getExecute() {
-        return getStr("execute");
-    }
-
-    public M setStatus(java.lang.Integer status) {
-        set("status", status);
-        return (M) this;
-    }
-
-    public java.lang.Integer getStatus() {
-        return getInt("status");
-    }
-
-    public M setDate(java.util.Date date) {
-        set("date", date);
-        return (M) this;
-    }
-
-    public java.util.Date getDate() {
-        return get("date");
-    }
-
-    public M setEdate(java.util.Date edate) {
-        set("edate", edate);
-        return (M) this;
-    }
-
-    public java.util.Date getEdate() {
-        return get("edate");
-    }
+	public M setEdate(java.util.Date edate) {
+		set("edate", edate);
+		return (M)this;
+	}
+	
+	public java.util.Date getEdate() {
+		return get("edate");
+	}
 
 }

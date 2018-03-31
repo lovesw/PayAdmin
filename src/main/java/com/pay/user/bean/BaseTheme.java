@@ -9,121 +9,121 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings({"serial", "unchecked"})
 public abstract class BaseTheme<M extends BaseTheme<M>> extends Model<M> implements IBean {
 
-    public M setId(java.lang.String id) {
-        set("id", id);
-        return (M) this;
-    }
+	public M setId(java.lang.String id) {
+		set("id", id);
+		return (M)this;
+	}
+	
+	public java.lang.String getId() {
+		return getStr("id");
+	}
 
-    public java.lang.String getId() {
-        return getStr("id");
-    }
+	public M setUserId(java.lang.String userId) {
+		set("user_id", userId);
+		return (M)this;
+	}
+	
+	public java.lang.String getUserId() {
+		return getStr("user_id");
+	}
 
-    public M setUserId(java.lang.String userId) {
-        set("user_id", userId);
-        return (M) this;
-    }
+	public M setServiceType(java.lang.String serviceType) {
+		set("service_type", serviceType);
+		return (M)this;
+	}
+	
+	public java.lang.String getServiceType() {
+		return getStr("service_type");
+	}
 
-    public java.lang.String getUserId() {
-        return getStr("user_id");
-    }
+	public M setCooperationId(java.lang.String cooperationId) {
+		set("cooperation_id", cooperationId);
+		return (M)this;
+	}
+	
+	public java.lang.String getCooperationId() {
+		return getStr("cooperation_id");
+	}
 
-    public M setServiceType(java.lang.String serviceType) {
-        set("service_type", serviceType);
-        return (M) this;
-    }
+	public M setNum(java.lang.Integer num) {
+		set("num", num);
+		return (M)this;
+	}
+	
+	public java.lang.Integer getNum() {
+		return getInt("num");
+	}
 
-    public java.lang.String getServiceType() {
-        return getStr("service_type");
-    }
+	public M setThemeName(java.lang.String themeName) {
+		set("theme_name", themeName);
+		return (M)this;
+	}
+	
+	public java.lang.String getThemeName() {
+		return getStr("theme_name");
+	}
 
-    public M setCooperationId(java.lang.String cooperationId) {
-        set("cooperation_id", cooperationId);
-        return (M) this;
-    }
+	public M setShelvesDate(java.util.Date shelvesDate) {
+		set("shelves_date", shelvesDate);
+		return (M)this;
+	}
+	
+	public java.util.Date getShelvesDate() {
+		return get("shelves_date");
+	}
 
-    public java.lang.String getCooperationId() {
-        return getStr("cooperation_id");
-    }
+	public M setMakeId(java.lang.String makeId) {
+		set("make_id", makeId);
+		return (M)this;
+	}
+	
+	public java.lang.String getMakeId() {
+		return getStr("make_id");
+	}
 
-    public M setNum(java.lang.Integer num) {
-        set("num", num);
-        return (M) this;
-    }
+	public M setMoneyType(java.lang.String moneyType) {
+		set("money_type", moneyType);
+		return (M)this;
+	}
+	
+	public java.lang.String getMoneyType() {
+		return getStr("money_type");
+	}
 
-    public java.lang.Integer getNum() {
-        return getInt("num");
-    }
+	public M setTurnover(java.lang.Double turnover) {
+		set("turnover", turnover);
+		return (M)this;
+	}
+	
+	public java.lang.Double getTurnover() {
+		return getDouble("turnover");
+	}
 
-    public M setThemeName(java.lang.String themeName) {
-        set("theme_name", themeName);
-        return (M) this;
-    }
+	public M setDate(java.util.Date date) {
+		set("date", date);
+		return (M)this;
+	}
+	
+	public java.util.Date getDate() {
+		return get("date");
+	}
 
-    public java.lang.String getThemeName() {
-        return getStr("theme_name");
-    }
+	public M setStatus(java.lang.Integer status) {
+		set("status", status);
+		return (M)this;
+	}
+	
+	public java.lang.Integer getStatus() {
+		return getInt("status");
+	}
 
-    public M setShelvesDate(java.util.Date shelvesDate) {
-        set("shelves_date", shelvesDate);
-        return (M) this;
-    }
-
-    public java.util.Date getShelvesDate() {
-        return get("shelves_date");
-    }
-
-    public M setMakeId(java.lang.String makeId) {
-        set("make_id", makeId);
-        return (M) this;
-    }
-
-    public java.lang.String getMakeId() {
-        return getStr("make_id");
-    }
-
-    public M setMoneyType(java.lang.String moneyType) {
-        set("money_type", moneyType);
-        return (M) this;
-    }
-
-    public java.lang.String getMoneyType() {
-        return getStr("money_type");
-    }
-
-    public M setTurnover(java.lang.Double turnover) {
-        set("turnover", turnover);
-        return (M) this;
-    }
-
-    public java.lang.Double getTurnover() {
-        return getDouble("turnover");
-    }
-
-    public M setDate(java.util.Date date) {
-        set("date", date);
-        return (M) this;
-    }
-
-    public java.util.Date getDate() {
-        return get("date");
-    }
-
-    public M setStatus(java.lang.Integer status) {
-        set("status", status);
-        return (M) this;
-    }
-
-    public java.lang.Integer getStatus() {
-        return getInt("status");
-    }
-
-    public M setUserStatus(java.lang.Boolean userStatus) {
-        set("user_status", userStatus);
-        return (M) this;
-    }
-
-    public java.lang.Boolean getUserStatus() {
-        return get("user_status");
-    }
+	public M setUserStatus(java.lang.Boolean userStatus) {
+		set("user_status", userStatus);
+		return (M)this;
+	}
+	
+	public java.lang.Boolean getUserStatus() {
+		return get("user_status");
+	}
 
 }

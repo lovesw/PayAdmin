@@ -19,17 +19,22 @@ public class AdminRoutes extends Routes {
         addInterceptor(new PermissionInterceptor());
         //管理员级别查看用户信息
         add("/admin/u", UserAction.class);
-
-
-        //添加权限管理的URl
+        //主题管理
         add("/admin/t", ThemeAction.class);
+        //公司管理
         add("/admin/c", CompanyAction.class);
+        //合作方管理
         add("/admin/ca", CooperationAction.class);
+        //合同管理
         add("/admin/ct", ContractAction.class);
+        //项目经历
         add("/admin/pr", ProjectAction.class);
+        //发票管理
         add("/admin/i", InvoiceAction.class);
-        add("/admin/ea", EquipmentAction.class);
-
+        //设备管理
+        add("/admin/eq", EquipmentAction.class);
+        //惩罚记录
+        add("/admin/p", PunishAction.class);
 
     }
 }

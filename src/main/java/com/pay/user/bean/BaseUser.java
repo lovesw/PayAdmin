@@ -9,139 +9,139 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings({"serial", "unchecked"})
 public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implements IBean {
 
-    public M setId(java.lang.String id) {
-        set("id", id);
-        return (M) this;
-    }
+	public M setId(java.lang.String id) {
+		set("id", id);
+		return (M)this;
+	}
+	
+	public java.lang.String getId() {
+		return getStr("id");
+	}
 
-    public java.lang.String getId() {
-        return getStr("id");
-    }
+	public M setName(java.lang.String name) {
+		set("name", name);
+		return (M)this;
+	}
+	
+	public java.lang.String getName() {
+		return getStr("name");
+	}
 
-    public M setName(java.lang.String name) {
-        set("name", name);
-        return (M) this;
-    }
+	public M setDepartment(java.lang.String department) {
+		set("department", department);
+		return (M)this;
+	}
+	
+	public java.lang.String getDepartment() {
+		return getStr("department");
+	}
 
-    public java.lang.String getName() {
-        return getStr("name");
-    }
+	public M setPosition(java.lang.String position) {
+		set("position", position);
+		return (M)this;
+	}
+	
+	public java.lang.String getPosition() {
+		return getStr("position");
+	}
 
-    public M setDepartment(java.lang.String department) {
-        set("department", department);
-        return (M) this;
-    }
+	public M setGrade(java.lang.String grade) {
+		set("grade", grade);
+		return (M)this;
+	}
+	
+	public java.lang.String getGrade() {
+		return getStr("grade");
+	}
 
-    public java.lang.String getDepartment() {
-        return getStr("department");
-    }
+	public M setPassword(java.lang.String password) {
+		set("password", password);
+		return (M)this;
+	}
+	
+	public java.lang.String getPassword() {
+		return getStr("password");
+	}
 
-    public M setPosition(java.lang.String position) {
-        set("position", position);
-        return (M) this;
-    }
+	public M setSDate(java.util.Date sDate) {
+		set("s_date", sDate);
+		return (M)this;
+	}
+	
+	public java.util.Date getSDate() {
+		return get("s_date");
+	}
 
-    public java.lang.String getPosition() {
-        return getStr("position");
-    }
+	public M setZDate(java.util.Date zDate) {
+		set("z_date", zDate);
+		return (M)this;
+	}
+	
+	public java.util.Date getZDate() {
+		return get("z_date");
+	}
 
-    public M setGrade(java.lang.String grade) {
-        set("grade", grade);
-        return (M) this;
-    }
+	public M setSocialType(java.lang.String socialType) {
+		set("social_type", socialType);
+		return (M)this;
+	}
+	
+	public java.lang.String getSocialType() {
+		return getStr("social_type");
+	}
 
-    public java.lang.String getGrade() {
-        return getStr("grade");
-    }
+	public M setSocial(java.lang.String social) {
+		set("social", social);
+		return (M)this;
+	}
+	
+	public java.lang.String getSocial() {
+		return getStr("social");
+	}
 
-    public M setPassword(java.lang.String password) {
-        set("password", password);
-        return (M) this;
-    }
+	public M setSocialDate(java.util.Date socialDate) {
+		set("social_date", socialDate);
+		return (M)this;
+	}
+	
+	public java.util.Date getSocialDate() {
+		return get("social_date");
+	}
 
-    public java.lang.String getPassword() {
-        return getStr("password");
-    }
+	public M setType(java.lang.String type) {
+		set("type", type);
+		return (M)this;
+	}
+	
+	public java.lang.String getType() {
+		return getStr("type");
+	}
 
-    public M setSDate(java.util.Date sDate) {
-        set("s_date", sDate);
-        return (M) this;
-    }
+	public M setMark(java.lang.Boolean mark) {
+		set("mark", mark);
+		return (M)this;
+	}
+	
+	public java.lang.Boolean getMark() {
+		return get("mark");
+	}
 
-    public java.util.Date getSDate() {
-        return get("s_date");
-    }
+	public M setStatus(java.lang.Boolean status) {
+		set("status", status);
+		return (M)this;
+	}
+	
+	public java.lang.Boolean getStatus() {
+		return get("status");
+	}
 
-    public M setZDate(java.util.Date zDate) {
-        set("z_date", zDate);
-        return (M) this;
-    }
-
-    public java.util.Date getZDate() {
-        return get("z_date");
-    }
-
-    public M setSocialType(java.lang.String socialType) {
-        set("social_type", socialType);
-        return (M) this;
-    }
-
-    public java.lang.String getSocialType() {
-        return getStr("social_type");
-    }
-
-    public M setSocial(java.lang.String social) {
-        set("social", social);
-        return (M) this;
-    }
-
-    public java.lang.String getSocial() {
-        return getStr("social");
-    }
-
-    public M setSocialDate(java.util.Date socialDate) {
-        set("social_date", socialDate);
-        return (M) this;
-    }
-
-    public java.util.Date getSocialDate() {
-        return get("social_date");
-    }
-
-    public M setType(java.lang.String type) {
-        set("type", type);
-        return (M) this;
-    }
-
-    public java.lang.String getType() {
-        return getStr("type");
-    }
-
-    public M setMark(java.lang.Boolean mark) {
-        set("mark", mark);
-        return (M) this;
-    }
-
-    public java.lang.Boolean getMark() {
-        return get("mark");
-    }
-
-    public M setStatus(java.lang.Boolean status) {
-        set("status", status);
-        return (M) this;
-    }
-
-    public java.lang.Boolean getStatus() {
-        return get("status");
-    }
-
-    public M setDate(java.util.Date date) {
-        set("date", date);
-        return (M) this;
-    }
-
-    public java.util.Date getDate() {
-        return get("date");
-    }
+	public M setDate(java.util.Date date) {
+		set("date", date);
+		return (M)this;
+	}
+	
+	public java.util.Date getDate() {
+		return get("date");
+	}
 
 }

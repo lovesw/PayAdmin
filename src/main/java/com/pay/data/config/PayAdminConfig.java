@@ -10,9 +10,9 @@ import com.jfinal.plugin.ehcache.EhCachePlugin;
 import com.jfinal.template.Engine;
 import com.pay.admin.config.AdminRoutes;
 import com.pay.data.interceptors.ExceptionInterceptor;
-import com.pay.staff.config.StaffRoutes;
 import com.pay.sys.config.SysRoutes;
 import com.pay.user.config.LoginRoutes;
+import com.pay.user.config.ParaUserRoutes;
 import com.pay.user.config.UserRoutes;
 import com.pay.user.model._MappingKit;
 import lombok.extern.slf4j.Slf4j;
@@ -52,7 +52,7 @@ public class PayAdminConfig extends JFinalConfig {
         //sys包下的URL
         routes.add(new SysRoutes());
         //staff下的url
-        routes.add(new StaffRoutes());
+        routes.add(new ParaUserRoutes());
 
     }
 

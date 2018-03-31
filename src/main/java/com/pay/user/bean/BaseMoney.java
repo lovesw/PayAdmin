@@ -9,202 +9,202 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings({"serial", "unchecked"})
 public abstract class BaseMoney<M extends BaseMoney<M>> extends Model<M> implements IBean {
 
-    public M setId(java.lang.String id) {
-        set("id", id);
-        return (M) this;
-    }
+	public M setId(java.lang.String id) {
+		set("id", id);
+		return (M)this;
+	}
+	
+	public java.lang.String getId() {
+		return getStr("id");
+	}
 
-    public java.lang.String getId() {
-        return getStr("id");
-    }
+	public M setUserId(java.lang.String userId) {
+		set("user_id", userId);
+		return (M)this;
+	}
+	
+	public java.lang.String getUserId() {
+		return getStr("user_id");
+	}
 
-    public M setUserId(java.lang.String userId) {
-        set("user_id", userId);
-        return (M) this;
-    }
+	public M setMonth(java.util.Date month) {
+		set("month", month);
+		return (M)this;
+	}
+	
+	public java.util.Date getMonth() {
+		return get("month");
+	}
 
-    public java.lang.String getUserId() {
-        return getStr("user_id");
-    }
+	public M setBaseMoney(java.lang.Double baseMoney) {
+		set("base_money", baseMoney);
+		return (M)this;
+	}
+	
+	public java.lang.Double getBaseMoney() {
+		return getDouble("base_money");
+	}
 
-    public M setMonth(java.util.Date month) {
-        set("month", month);
-        return (M) this;
-    }
+	public M setWorkReward(java.lang.Double workReward) {
+		set("work_reward", workReward);
+		return (M)this;
+	}
+	
+	public java.lang.Double getWorkReward() {
+		return getDouble("work_reward");
+	}
 
-    public java.util.Date getMonth() {
-        return get("month");
-    }
+	public M setAchievements(java.lang.Double achievements) {
+		set("achievements", achievements);
+		return (M)this;
+	}
+	
+	public java.lang.Double getAchievements() {
+		return getDouble("achievements");
+	}
 
-    public M setBaseMoney(java.lang.Double baseMoney) {
-        set("base_money", baseMoney);
-        return (M) this;
-    }
+	public M setReward(java.lang.Double reward) {
+		set("reward", reward);
+		return (M)this;
+	}
+	
+	public java.lang.Double getReward() {
+		return getDouble("reward");
+	}
 
-    public java.lang.Double getBaseMoney() {
-        return getDouble("base_money");
-    }
+	public M setHouse(java.lang.Double house) {
+		set("house", house);
+		return (M)this;
+	}
+	
+	public java.lang.Double getHouse() {
+		return getDouble("house");
+	}
 
-    public M setWorkReward(java.lang.Double workReward) {
-        set("work_reward", workReward);
-        return (M) this;
-    }
+	public M setTotalReward(java.lang.Double totalReward) {
+		set("total_reward", totalReward);
+		return (M)this;
+	}
+	
+	public java.lang.Double getTotalReward() {
+		return getDouble("total_reward");
+	}
 
-    public java.lang.Double getWorkReward() {
-        return getDouble("work_reward");
-    }
+	public M setOther(java.lang.Double other) {
+		set("other", other);
+		return (M)this;
+	}
+	
+	public java.lang.Double getOther() {
+		return getDouble("other");
+	}
 
-    public M setAchievements(java.lang.Double achievements) {
-        set("achievements", achievements);
-        return (M) this;
-    }
+	public M setShouldCount(java.lang.Double shouldCount) {
+		set("should_count", shouldCount);
+		return (M)this;
+	}
+	
+	public java.lang.Double getShouldCount() {
+		return getDouble("should_count");
+	}
 
-    public java.lang.Double getAchievements() {
-        return getDouble("achievements");
-    }
+	public M setTake(java.lang.Double take) {
+		set("take", take);
+		return (M)this;
+	}
+	
+	public java.lang.Double getTake() {
+		return getDouble("take");
+	}
 
-    public M setReward(java.lang.Double reward) {
-        set("reward", reward);
-        return (M) this;
-    }
+	public M setTakeError(java.lang.Double takeError) {
+		set("take_error", takeError);
+		return (M)this;
+	}
+	
+	public java.lang.Double getTakeError() {
+		return getDouble("take_error");
+	}
 
-    public java.lang.Double getReward() {
-        return getDouble("reward");
-    }
+	public M setTakeOther(java.lang.Double takeOther) {
+		set("take_other", takeOther);
+		return (M)this;
+	}
+	
+	public java.lang.Double getTakeOther() {
+		return getDouble("take_other");
+	}
 
-    public M setHouse(java.lang.Double house) {
-        set("house", house);
-        return (M) this;
-    }
+	public M setSocial(java.lang.Double social) {
+		set("social", social);
+		return (M)this;
+	}
+	
+	public java.lang.Double getSocial() {
+		return getDouble("social");
+	}
 
-    public java.lang.Double getHouse() {
-        return getDouble("house");
-    }
+	public M setTax(java.lang.Double tax) {
+		set("tax", tax);
+		return (M)this;
+	}
+	
+	public java.lang.Double getTax() {
+		return getDouble("tax");
+	}
 
-    public M setTotalReward(java.lang.Double totalReward) {
-        set("total_reward", totalReward);
-        return (M) this;
-    }
+	public M setTakeCount(java.lang.Double takeCount) {
+		set("take_count", takeCount);
+		return (M)this;
+	}
+	
+	public java.lang.Double getTakeCount() {
+		return getDouble("take_count");
+	}
 
-    public java.lang.Double getTotalReward() {
-        return getDouble("total_reward");
-    }
+	public M setSocialStart(java.lang.Double socialStart) {
+		set("social_start", socialStart);
+		return (M)this;
+	}
+	
+	public java.lang.Double getSocialStart() {
+		return getDouble("social_start");
+	}
 
-    public M setOther(java.lang.Double other) {
-        set("other", other);
-        return (M) this;
-    }
+	public M setSubmitMoney(java.lang.Double submitMoney) {
+		set("submit_money", submitMoney);
+		return (M)this;
+	}
+	
+	public java.lang.Double getSubmitMoney() {
+		return getDouble("submit_money");
+	}
 
-    public java.lang.Double getOther() {
-        return getDouble("other");
-    }
+	public M setActualMoney(java.lang.Double actualMoney) {
+		set("actual_money", actualMoney);
+		return (M)this;
+	}
+	
+	public java.lang.Double getActualMoney() {
+		return getDouble("actual_money");
+	}
 
-    public M setShouldCount(java.lang.Double shouldCount) {
-        set("should_count", shouldCount);
-        return (M) this;
-    }
+	public M setRemark(java.lang.Double remark) {
+		set("remark", remark);
+		return (M)this;
+	}
+	
+	public java.lang.Double getRemark() {
+		return getDouble("remark");
+	}
 
-    public java.lang.Double getShouldCount() {
-        return getDouble("should_count");
-    }
-
-    public M setTake(java.lang.Double take) {
-        set("take", take);
-        return (M) this;
-    }
-
-    public java.lang.Double getTake() {
-        return getDouble("take");
-    }
-
-    public M setTakeError(java.lang.Double takeError) {
-        set("take_error", takeError);
-        return (M) this;
-    }
-
-    public java.lang.Double getTakeError() {
-        return getDouble("take_error");
-    }
-
-    public M setTakeOther(java.lang.Double takeOther) {
-        set("take_other", takeOther);
-        return (M) this;
-    }
-
-    public java.lang.Double getTakeOther() {
-        return getDouble("take_other");
-    }
-
-    public M setSocial(java.lang.Double social) {
-        set("social", social);
-        return (M) this;
-    }
-
-    public java.lang.Double getSocial() {
-        return getDouble("social");
-    }
-
-    public M setTax(java.lang.Double tax) {
-        set("tax", tax);
-        return (M) this;
-    }
-
-    public java.lang.Double getTax() {
-        return getDouble("tax");
-    }
-
-    public M setTakeCount(java.lang.Double takeCount) {
-        set("take_count", takeCount);
-        return (M) this;
-    }
-
-    public java.lang.Double getTakeCount() {
-        return getDouble("take_count");
-    }
-
-    public M setSocialStart(java.lang.Double socialStart) {
-        set("social_start", socialStart);
-        return (M) this;
-    }
-
-    public java.lang.Double getSocialStart() {
-        return getDouble("social_start");
-    }
-
-    public M setSubmitMoney(java.lang.Double submitMoney) {
-        set("submit_money", submitMoney);
-        return (M) this;
-    }
-
-    public java.lang.Double getSubmitMoney() {
-        return getDouble("submit_money");
-    }
-
-    public M setActualMoney(java.lang.Double actualMoney) {
-        set("actual_money", actualMoney);
-        return (M) this;
-    }
-
-    public java.lang.Double getActualMoney() {
-        return getDouble("actual_money");
-    }
-
-    public M setRemark(java.lang.Double remark) {
-        set("remark", remark);
-        return (M) this;
-    }
-
-    public java.lang.Double getRemark() {
-        return getDouble("remark");
-    }
-
-    public M setDate(java.lang.Double date) {
-        set("date", date);
-        return (M) this;
-    }
-
-    public java.lang.Double getDate() {
-        return getDouble("date");
-    }
+	public M setDate(java.lang.Double date) {
+		set("date", date);
+		return (M)this;
+	}
+	
+	public java.lang.Double getDate() {
+		return getDouble("date");
+	}
 
 }

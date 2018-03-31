@@ -9,184 +9,184 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings({"serial", "unchecked"})
 public abstract class BaseUserInfo<M extends BaseUserInfo<M>> extends Model<M> implements IBean {
 
-    public M setUserId(java.lang.String userId) {
-        set("user_id", userId);
-        return (M) this;
-    }
+	public M setUserId(java.lang.String userId) {
+		set("user_id", userId);
+		return (M)this;
+	}
+	
+	public java.lang.String getUserId() {
+		return getStr("user_id");
+	}
 
-    public java.lang.String getUserId() {
-        return getStr("user_id");
-    }
+	public M setNation(java.lang.String nation) {
+		set("nation", nation);
+		return (M)this;
+	}
+	
+	public java.lang.String getNation() {
+		return getStr("nation");
+	}
 
-    public M setNation(java.lang.String nation) {
-        set("nation", nation);
-        return (M) this;
-    }
+	public M setPlace(java.lang.String place) {
+		set("place", place);
+		return (M)this;
+	}
+	
+	public java.lang.String getPlace() {
+		return getStr("place");
+	}
 
-    public java.lang.String getNation() {
-        return getStr("nation");
-    }
+	public M setIdPlace(java.lang.String idPlace) {
+		set("id_place", idPlace);
+		return (M)this;
+	}
+	
+	public java.lang.String getIdPlace() {
+		return getStr("id_place");
+	}
 
-    public M setPlace(java.lang.String place) {
-        set("place", place);
-        return (M) this;
-    }
+	public M setMarriage(java.lang.String marriage) {
+		set("marriage", marriage);
+		return (M)this;
+	}
+	
+	public java.lang.String getMarriage() {
+		return getStr("marriage");
+	}
 
-    public java.lang.String getPlace() {
-        return getStr("place");
-    }
+	public M setHealth(java.lang.String health) {
+		set("health", health);
+		return (M)this;
+	}
+	
+	public java.lang.String getHealth() {
+		return getStr("health");
+	}
 
-    public M setIdPlace(java.lang.String idPlace) {
-        set("id_place", idPlace);
-        return (M) this;
-    }
+	public M setUrgentName(java.lang.String urgentName) {
+		set("urgent_name", urgentName);
+		return (M)this;
+	}
+	
+	public java.lang.String getUrgentName() {
+		return getStr("urgent_name");
+	}
 
-    public java.lang.String getIdPlace() {
-        return getStr("id_place");
-    }
+	public M setUrgentRelation(java.lang.String urgentRelation) {
+		set("urgent_relation", urgentRelation);
+		return (M)this;
+	}
+	
+	public java.lang.String getUrgentRelation() {
+		return getStr("urgent_relation");
+	}
 
-    public M setMarriage(java.lang.String marriage) {
-        set("marriage", marriage);
-        return (M) this;
-    }
+	public M setUrgentPhone(java.lang.String urgentPhone) {
+		set("urgent_phone", urgentPhone);
+		return (M)this;
+	}
+	
+	public java.lang.String getUrgentPhone() {
+		return getStr("urgent_phone");
+	}
 
-    public java.lang.String getMarriage() {
-        return getStr("marriage");
-    }
+	public M setAddress(java.lang.String address) {
+		set("address", address);
+		return (M)this;
+	}
+	
+	public java.lang.String getAddress() {
+		return getStr("address");
+	}
 
-    public M setHealth(java.lang.String health) {
-        set("health", health);
-        return (M) this;
-    }
+	public M setBankName(java.lang.String bankName) {
+		set("bank_name", bankName);
+		return (M)this;
+	}
+	
+	public java.lang.String getBankName() {
+		return getStr("bank_name");
+	}
 
-    public java.lang.String getHealth() {
-        return getStr("health");
-    }
+	public M setBankId(java.lang.String bankId) {
+		set("bank_id", bankId);
+		return (M)this;
+	}
+	
+	public java.lang.String getBankId() {
+		return getStr("bank_id");
+	}
 
-    public M setUrgentName(java.lang.String urgentName) {
-        set("urgent_name", urgentName);
-        return (M) this;
-    }
+	public M setLangLevel(java.lang.String langLevel) {
+		set("lang_level", langLevel);
+		return (M)this;
+	}
+	
+	public java.lang.String getLangLevel() {
+		return getStr("lang_level");
+	}
 
-    public java.lang.String getUrgentName() {
-        return getStr("urgent_name");
-    }
+	public M setNickname(java.lang.String nickname) {
+		set("nickname", nickname);
+		return (M)this;
+	}
+	
+	public java.lang.String getNickname() {
+		return getStr("nickname");
+	}
 
-    public M setUrgentRelation(java.lang.String urgentRelation) {
-        set("urgent_relation", urgentRelation);
-        return (M) this;
-    }
+	public M setEName(java.lang.String eName) {
+		set("e_name", eName);
+		return (M)this;
+	}
+	
+	public java.lang.String getEName() {
+		return getStr("e_name");
+	}
 
-    public java.lang.String getUrgentRelation() {
-        return getStr("urgent_relation");
-    }
+	public M setIdcard(java.lang.String idcard) {
+		set("idcard", idcard);
+		return (M)this;
+	}
+	
+	public java.lang.String getIdcard() {
+		return getStr("idcard");
+	}
 
-    public M setUrgentPhone(java.lang.String urgentPhone) {
-        set("urgent_phone", urgentPhone);
-        return (M) this;
-    }
+	public M setPhone(java.lang.String phone) {
+		set("phone", phone);
+		return (M)this;
+	}
+	
+	public java.lang.String getPhone() {
+		return getStr("phone");
+	}
 
-    public java.lang.String getUrgentPhone() {
-        return getStr("urgent_phone");
-    }
+	public M setQq(java.lang.String qq) {
+		set("qq", qq);
+		return (M)this;
+	}
+	
+	public java.lang.String getQq() {
+		return getStr("qq");
+	}
 
-    public M setAddress(java.lang.String address) {
-        set("address", address);
-        return (M) this;
-    }
+	public M setWeixin(java.lang.String weixin) {
+		set("weixin", weixin);
+		return (M)this;
+	}
+	
+	public java.lang.String getWeixin() {
+		return getStr("weixin");
+	}
 
-    public java.lang.String getAddress() {
-        return getStr("address");
-    }
-
-    public M setBankName(java.lang.String bankName) {
-        set("bank_name", bankName);
-        return (M) this;
-    }
-
-    public java.lang.String getBankName() {
-        return getStr("bank_name");
-    }
-
-    public M setBankId(java.lang.String bankId) {
-        set("bank_id", bankId);
-        return (M) this;
-    }
-
-    public java.lang.String getBankId() {
-        return getStr("bank_id");
-    }
-
-    public M setLangLevel(java.lang.String langLevel) {
-        set("lang_level", langLevel);
-        return (M) this;
-    }
-
-    public java.lang.String getLangLevel() {
-        return getStr("lang_level");
-    }
-
-    public M setNickname(java.lang.String nickname) {
-        set("nickname", nickname);
-        return (M) this;
-    }
-
-    public java.lang.String getNickname() {
-        return getStr("nickname");
-    }
-
-    public M setEName(java.lang.String eName) {
-        set("e_name", eName);
-        return (M) this;
-    }
-
-    public java.lang.String getEName() {
-        return getStr("e_name");
-    }
-
-    public M setIdcard(java.lang.String idcard) {
-        set("idcard", idcard);
-        return (M) this;
-    }
-
-    public java.lang.String getIdcard() {
-        return getStr("idcard");
-    }
-
-    public M setPhone(java.lang.String phone) {
-        set("phone", phone);
-        return (M) this;
-    }
-
-    public java.lang.String getPhone() {
-        return getStr("phone");
-    }
-
-    public M setQq(java.lang.String qq) {
-        set("qq", qq);
-        return (M) this;
-    }
-
-    public java.lang.String getQq() {
-        return getStr("qq");
-    }
-
-    public M setWeixin(java.lang.String weixin) {
-        set("weixin", weixin);
-        return (M) this;
-    }
-
-    public java.lang.String getWeixin() {
-        return getStr("weixin");
-    }
-
-    public M setEmail(java.lang.String email) {
-        set("email", email);
-        return (M) this;
-    }
-
-    public java.lang.String getEmail() {
-        return getStr("email");
-    }
+	public M setEmail(java.lang.String email) {
+		set("email", email);
+		return (M)this;
+	}
+	
+	public java.lang.String getEmail() {
+		return getStr("email");
+	}
 
 }

@@ -1,5 +1,8 @@
 package com.pay.admin.service;
 
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.util.RandomUtil;
+import cn.hutool.core.util.StrUtil;
 import com.jfinal.upload.UploadFile;
 import com.pay.data.utils.FileImageUtils;
 import com.pay.data.utils.HumpToUnderline;
@@ -9,6 +12,7 @@ import java.io.File;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * @createTime: 2018/3/9
@@ -22,19 +26,20 @@ public class ContractService {
      *
      * @return 列表
      */
-    public List<Map<String, Object>> listService() {
-        String sql = "select c.id,u.name as user_id,title,pdf,first,second,c.date,start_date,end_date from contract as c,user as u where c.user_id=u.id ";
+    public List<Contract> listService() {
+        String sql = "select c.id,title,pdf, (SELECT name from user where id=c.first) as first, (SELECT name from user where id=c.second) as second,c.date,start_date,end_date from contract as c";
         //转为驼峰命名
-        return HumpToUnderline.underlineToHumps(Contract.dao.find(sql));
+        return Contract.dao.find(sql);
     }
 
     /**
      * 预览PDF格式的文件
      *
-     * @param pdfName PDF名称
+     * @param id 合同的唯一ID
      * @return PDF的文件对象
      */
-    public File lookPDFService(String pdfName) {
+    public File lookPDFService(String id) {
+        String pdfName = Contract.dao.findById(id).getPdf();
         return FileImageUtils.readPDF(pdfName);
     }
 
@@ -46,7 +51,18 @@ public class ContractService {
      * @return 上传结果
      */
     public boolean addService(Contract contract, UploadFile uploadFile) {
-        String fileName = contract.getUserId() + ".pdf";
+
+        //如果甲方与乙方是同一个人，就返回
+        if (StrUtil.equals(contract.getSecond(), contract.getFirst())) {
+            return false;
+        }
+        //合同的时间判断,开始时间必须小于结束时间
+        if (contract.getEndDate().getTime() < contract.getStartDate().getTime()) {
+            return false;
+        }
+
+        //随机生成一个合同名称
+        String fileName = DateUtil.format(new Date(), "yyyyMMddHHmmss") + RandomUtil.randomNumbers(2) + ".pdf";
         contract.setPdf(fileName);
         contract.setDate(new Date());
         return FileImageUtils.savePDF(uploadFile, fileName) && contract.save();

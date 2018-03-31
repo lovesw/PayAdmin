@@ -9,58 +9,58 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings({"serial", "unchecked"})
 public abstract class BasePermission<M extends BasePermission<M>> extends Model<M> implements IBean {
 
-    public M setId(java.lang.Long id) {
-        set("id", id);
-        return (M) this;
-    }
+	public M setId(java.lang.Long id) {
+		set("id", id);
+		return (M)this;
+	}
+	
+	public java.lang.Long getId() {
+		return getLong("id");
+	}
 
-    public java.lang.Long getId() {
-        return getLong("id");
-    }
+	public M setMid(java.lang.Long mid) {
+		set("mid", mid);
+		return (M)this;
+	}
+	
+	public java.lang.Long getMid() {
+		return getLong("mid");
+	}
 
-    public M setMid(java.lang.Long mid) {
-        set("mid", mid);
-        return (M) this;
-    }
+	public M setName(java.lang.String name) {
+		set("name", name);
+		return (M)this;
+	}
+	
+	public java.lang.String getName() {
+		return getStr("name");
+	}
 
-    public java.lang.Long getMid() {
-        return getLong("mid");
-    }
+	public M setUrl(java.lang.String url) {
+		set("url", url);
+		return (M)this;
+	}
+	
+	public java.lang.String getUrl() {
+		return getStr("url");
+	}
 
-    public M setName(java.lang.String name) {
-        set("name", name);
-        return (M) this;
-    }
+	public M setContent(java.lang.String content) {
+		set("content", content);
+		return (M)this;
+	}
+	
+	public java.lang.String getContent() {
+		return getStr("content");
+	}
 
-    public java.lang.String getName() {
-        return getStr("name");
-    }
-
-    public M setUrl(java.lang.String url) {
-        set("url", url);
-        return (M) this;
-    }
-
-    public java.lang.String getUrl() {
-        return getStr("url");
-    }
-
-    public M setContent(java.lang.String content) {
-        set("content", content);
-        return (M) this;
-    }
-
-    public java.lang.String getContent() {
-        return getStr("content");
-    }
-
-    public M setDate(java.util.Date date) {
-        set("date", date);
-        return (M) this;
-    }
-
-    public java.util.Date getDate() {
-        return get("date");
-    }
+	public M setDate(java.util.Date date) {
+		set("date", date);
+		return (M)this;
+	}
+	
+	public java.util.Date getDate() {
+		return get("date");
+	}
 
 }
