@@ -16,6 +16,7 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 public class _MappingKit {
 	
 	public static void mapping(ActiveRecordPlugin arp) {
+		arp.addMapping("archives", "id", Archives.class);
 		arp.addMapping("company", "id", Company.class);
 		arp.addMapping("contract", "id", Contract.class);
 		arp.addMapping("cooperation", "id", Cooperation.class);

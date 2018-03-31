@@ -9,7 +9,7 @@ import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.activerecord.tx.Tx;
 import com.jfinal.upload.UploadFile;
 import com.pay.data.utils.FileImageUtils;
-import com.pay.data.utils.FiledUtils;
+import com.pay.data.utils.FieldUtils;
 import com.pay.data.utils.HttpClientUtils;
 import com.pay.data.utils.StringUtils;
 import com.pay.user.model.Role;
@@ -129,7 +129,7 @@ public class UserInfoService {
     public boolean updateHeaderService(String headerName, UploadFile header) {
         String fileName = header.getOriginalFileName();
         //检测文件是图片图像并保存成功
-        return FileImageUtils.iconUtils(fileName) && FileImageUtils.saveImageUtils(header, headerName, FiledUtils.HEADER);
+        return FileImageUtils.iconUtils(fileName) && FileImageUtils.saveImageUtils(header, headerName, FieldUtils.HEADER);
     }
 
     /**
@@ -142,7 +142,7 @@ public class UserInfoService {
      * @return 保存结果
      */
     public boolean updateCardService(UploadFile card1, String cardName1, UploadFile card2, String cardName2) {
-        return card1 != null && card2 != null && FileImageUtils.iconUtils(card1.getOriginalFileName()) && FileImageUtils.saveImageUtils(card1, cardName1, FiledUtils.CARD) && FileImageUtils.iconUtils(card2.getOriginalFileName()) && FileImageUtils.saveImageUtils(card2, cardName2, FiledUtils.CARD);
+        return card1 != null && card2 != null && FileImageUtils.iconUtils(card1.getOriginalFileName()) && FileImageUtils.saveImageUtils(card1, cardName1, FieldUtils.CARD) && FileImageUtils.iconUtils(card2.getOriginalFileName()) && FileImageUtils.saveImageUtils(card2, cardName2, FieldUtils.CARD);
 
     }
 }

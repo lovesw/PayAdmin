@@ -5,7 +5,7 @@ import com.jfinal.aop.Invocation;
 import com.jfinal.core.Controller;
 import com.pay.data.entity.Result;
 import com.pay.data.enums.ExceptionEnum;
-import com.pay.data.utils.FiledUtils;
+import com.pay.data.utils.FieldUtils;
 import com.pay.data.utils.JwtUtil;
 import com.pay.data.utils.ResultUtils;
 import io.jsonwebtoken.Claims;
@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.http.HttpServletResponse;
 
-import static com.pay.data.utils.FiledUtils.AUTHORIZATION;
+import static com.pay.data.utils.FieldUtils.AUTHORIZATION;
 
 /**
  * @createTime: 2018/2/11
@@ -34,7 +34,7 @@ public class LoginInterceptor implements Interceptor {
         //获取response对象
         HttpServletResponse response = controller.getResponse();
         //获取请求头
-        String authHeader = controller.getHeader(FiledUtils.AUTHORIZATION);
+        String authHeader = controller.getHeader(FieldUtils.AUTHORIZATION);
         //判断是是否是option请求
         if (OPTIONS.equals(controller.getRequest().getMethod())) {
             response.setStatus(HttpServletResponse.SC_OK);

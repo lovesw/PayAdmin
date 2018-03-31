@@ -8,7 +8,7 @@ import com.pay.data.controller.BaseController;
 import com.pay.data.interceptors.Get;
 import com.pay.data.interceptors.Post;
 import com.pay.data.utils.FileImageUtils;
-import com.pay.data.utils.FiledUtils;
+import com.pay.data.utils.FieldUtils;
 import com.pay.user.model.User;
 import com.pay.user.service.UserInfoService;
 
@@ -43,7 +43,7 @@ public class UserInfoAction extends BaseController {
     public void userInfo() {
         String userId = getUserId();
         User user = userInfoService.userNameService(userId);
-        byte[] inputStream = FileImageUtils.readImageUtils(userId + HEADER, FiledUtils.HEADER);
+        byte[] inputStream = FileImageUtils.readImageUtils(userId + HEADER, FieldUtils.HEADER);
         Map<String, Object> map = new HashMap<>(2);
         map.put("name", user.getName());
         if (inputStream != null) {

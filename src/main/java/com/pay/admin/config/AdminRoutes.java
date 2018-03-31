@@ -35,6 +35,8 @@ public class AdminRoutes extends Routes {
         add("/admin/eq", EquipmentAction.class);
         //惩罚记录
         add("/admin/p", PunishAction.class);
+        //档案管理
+        add("/admin/a", ArchivesAction.class);
 
     }
 }

@@ -1,5 +1,6 @@
 package com.pay.admin.service;
 
+import cn.hutool.core.util.StrUtil;
 import com.pay.data.utils.IdUtils;
 import com.pay.user.model.Project;
 
@@ -21,7 +22,7 @@ public class ProjectService {
      * @return 项目经历信息列表
      */
     public List<Project> listService(String userId) {
-        String sql = "select * from project where user_id=?";
+        String sql = "select id,content,progress,remark,start_date from project where user_id=?";
         return Project.dao.find(sql, userId);
     }
 
@@ -32,7 +33,12 @@ public class ProjectService {
      * @return 添加的操作结果
      */
     public boolean addService(Project project) {
-        project.setId(IdUtils.getId());
+        if (StrUtil.isBlank(project.getUserId())) {
+            return false;
+        }
+        //设置主键为null，数据库自动增长
+        project.setId(null);
+
         project.setDate(new Date());
         return project.save();
     }

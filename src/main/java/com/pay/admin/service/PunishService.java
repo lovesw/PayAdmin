@@ -2,7 +2,7 @@ package com.pay.admin.service;
 
 import cn.hutool.core.util.StrUtil;
 import com.jfinal.plugin.activerecord.Db;
-import com.pay.data.utils.FiledUtils;
+import com.pay.data.utils.FieldUtils;
 import com.pay.data.utils.IdUtils;
 import com.pay.user.model.Punish;
 
@@ -35,7 +35,7 @@ public class PunishService {
      */
     public boolean addService(Punish punish) {
         punish.setId(IdUtils.getId());
-        punish.setStatus(FiledUtils.PUNISH_STATUS_0);
+        punish.setStatus(FieldUtils.PUNISH_STATUS_0);
         punish.setDate(new Date());
         return punish.save();
     }
@@ -64,7 +64,7 @@ public class PunishService {
         //判断添加该条奖惩记录是否与修改该条奖惩记录为同一人
         if (StrUtil.equals(executeId, punish.getExecute())) {
             //一旦修改了奖罚信息，就需要重新确认
-            punish.setStatus(FiledUtils.PUNISH_STATUS_0);
+            punish.setStatus(FieldUtils.PUNISH_STATUS_0);
             //修改时间
             punish.setDate(new Date());
             return punish.update();

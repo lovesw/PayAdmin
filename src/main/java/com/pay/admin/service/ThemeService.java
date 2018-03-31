@@ -2,7 +2,7 @@ package com.pay.admin.service;
 
 import cn.hutool.core.util.StrUtil;
 import com.jfinal.plugin.activerecord.Db;
-import com.pay.data.utils.FiledUtils;
+import com.pay.data.utils.FieldUtils;
 import com.pay.data.utils.IdUtils;
 import com.pay.user.model.Theme;
 
@@ -25,7 +25,7 @@ public class ThemeService {
         theme.setId(IdUtils.getId());
         theme.setDate(new Date());
         //主题审核是否通过
-        theme.setStatus(FiledUtils.THEME_STATUS_0);
+        theme.setStatus(FieldUtils.THEME_STATUS_0);
         //主题信息是否可以修改
         theme.setUserStatus(true);
         return theme.save();
@@ -78,11 +78,11 @@ public class ThemeService {
             return false;
         }
         //如果该主题状态，通过或者主题不能编辑，则返回false
-        if (!theme1.getStatus().equals(FiledUtils.THEME_STATUS_1) || !theme1.getUserStatus()) {
+        if (!theme1.getStatus().equals(FieldUtils.THEME_STATUS_1) || !theme1.getUserStatus()) {
             return false;
         }
         //设置主题状态为待审核
-        theme.setStatus(FiledUtils.THEME_STATUS_0);
+        theme.setStatus(FieldUtils.THEME_STATUS_0);
         theme.setUserStatus(true);
         return theme.update();
     }
@@ -97,10 +97,10 @@ public class ThemeService {
     public boolean passThemeService(String id, boolean status) {
         if (status) {
             String sql = "update theme set status=? and set user_status=false where id=? and  user_status=true";
-            return Db.update(sql, FiledUtils.THEME_STATUS_1, id) > 0;
+            return Db.update(sql, FieldUtils.THEME_STATUS_1, id) > 0;
         } else {
             String sql = "update theme set status=? and set user_status=false where id=? and user_status=true";
-            return Db.update(sql, FiledUtils.THEME_STATUS_2, id) > 0;
+            return Db.update(sql, FieldUtils.THEME_STATUS_2, id) > 0;
         }
 
     }

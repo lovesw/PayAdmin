@@ -77,4 +77,12 @@ public class UserNotPermissionAction extends BaseController {
         result(eqUpdateService.pnUpdateAgreeService(id, status, userId));
     }
 
+    /**
+     * 用户查看自己的项目经历
+     */
+    public void prList() {
+        String userId = getUserId();
+        success(eqUpdateService.prListService(userId));
+    }
+
 }

@@ -3,9 +3,10 @@ package com.pay.user.service;
 import cn.hutool.core.util.StrUtil;
 import com.jfinal.plugin.activerecord.Db;
 import com.pay.data.utils.FileImageUtils;
-import com.pay.data.utils.FiledUtils;
+import com.pay.data.utils.FieldUtils;
 import com.pay.user.model.Contract;
 import com.pay.user.model.Equipment;
+import com.pay.user.model.Project;
 import com.pay.user.model.Punish;
 
 import java.io.File;
@@ -93,7 +94,18 @@ public class UserNotPermissionService {
      */
     public boolean pnUpdateAgreeService(String id, Boolean status, String userId) {
         String sql = "update punish set status=? where id = ? and user_id=?";
-        Integer res = status ? FiledUtils.PUNISH_STATUS_1 : FiledUtils.PUNISH_STATUS_2;
+        Integer res = status ? FieldUtils.PUNISH_STATUS_1 : FieldUtils.PUNISH_STATUS_2;
         return Db.update(sql, res, id, userId) > 0;
+    }
+
+    /**
+     * 项目经历信息列表
+     *
+     * @param userId 用户的唯一Id
+     * @return 项目经历信息列表
+     */
+    public List<Project> prListService(String userId) {
+        String sql = "select id, content,progress,remark,start_date from project where user_id=?";
+        return Project.dao.find(sql, userId);
     }
 }

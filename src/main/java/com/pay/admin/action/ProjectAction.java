@@ -1,6 +1,7 @@
 package com.pay.admin.action;
 
 import com.jfinal.aop.Before;
+import com.jfinal.core.paragetter.Para;
 import com.pay.admin.service.ProjectService;
 import com.pay.data.controller.BaseController;
 import com.pay.data.interceptors.Delete;
@@ -19,38 +20,42 @@ public class ProjectAction extends BaseController {
 
     /**
      * 项目经历列表信息
+     *
+     * @param userId 指定用户的项目经历
      */
     @Before(Get.class)
-    public void list() {
-        String id = getPara("userId");
-        success(projectService.listService(id));
+    public void list(String userId) {
+        success(projectService.listService(userId));
     }
 
     /**
      * 添加项目经历信息
+     *
+     * @param project 项目经历对象
      */
     @Before(Post.class)
-    public void add() {
-        Project project = getBean(Project.class, "");
+    public void add(@Para("") Project project) {
         result(projectService.addService(project));
     }
 
     /**
      * 删除项目经历信息
+     *
+     * @param id 项目经历的唯一ID
      */
     @Before(Delete.class)
-    public void delete() {
-        String id = getPara("id");
+    public void delete(String id) {
         result(projectService.deleteService(id));
     }
 
 
     /**
      * 更新项目经历的信息
+     *
+     * @param project 项目经历
      */
     @Before(Put.class)
-    public void update() {
-        Project project = getBean(Project.class, "");
+    public void update(@Para("") Project project) {
         result(projectService.updateService(project));
     }
 

@@ -45,9 +45,9 @@ public class FileImageUtils {
     private static Map<Integer, String> initLocation() {
 
         Map<Integer, String> map = new HashMap<>(2);
-        map.put(FiledUtils.FILE_PDF, rootPath() + "/pdf/");
-        map.put(FiledUtils.HEADER, rootPath() + "/header/");
-        map.put(FiledUtils.CARD, rootPath() + "/card/");
+        map.put(FieldUtils.FILE_PDF, rootPath() + "/pdf/");
+        map.put(FieldUtils.HEADER, rootPath() + "/header/");
+        map.put(FieldUtils.CARD, rootPath() + "/card/");
         return map;
     }
 
@@ -95,7 +95,7 @@ public class FileImageUtils {
      * @return 返回读取的PDF文件对象
      */
     public static File readPDF(String pdfName) {
-        String path = LOCATION.get(FiledUtils.FILE_PDF) + pdfName;
+        String path = LOCATION.get(FieldUtils.FILE_PDF) + pdfName;
         return new File(path);
     }
 
@@ -107,7 +107,7 @@ public class FileImageUtils {
      * @return 保存结果
      */
     public static boolean savePDF(UploadFile file, String fileName) {
-        String path = LOCATION.get(FiledUtils.FILE_PDF) + fileName;
+        String path = LOCATION.get(FieldUtils.FILE_PDF) + fileName;
         File file1 = file.getFile();
         try {
             FileUtil.writeBytes(FileUtil.readBytes(file1), path);

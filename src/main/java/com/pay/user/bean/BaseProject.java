@@ -9,13 +9,13 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings({"serial", "unchecked"})
 public abstract class BaseProject<M extends BaseProject<M>> extends Model<M> implements IBean {
 
-	public M setId(java.lang.String id) {
+	public M setId(java.lang.Integer id) {
 		set("id", id);
 		return (M)this;
 	}
 	
-	public java.lang.String getId() {
-		return getStr("id");
+	public java.lang.Integer getId() {
+		return getInt("id");
 	}
 
 	public M setUserId(java.lang.String userId) {
@@ -34,15 +34,6 @@ public abstract class BaseProject<M extends BaseProject<M>> extends Model<M> imp
 	
 	public java.util.Date getStartDate() {
 		return get("start_date");
-	}
-
-	public M setEndDate(java.util.Date endDate) {
-		set("end_date", endDate);
-		return (M)this;
-	}
-	
-	public java.util.Date getEndDate() {
-		return get("end_date");
 	}
 
 	public M setContent(java.lang.String content) {

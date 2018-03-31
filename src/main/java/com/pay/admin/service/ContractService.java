@@ -27,7 +27,7 @@ public class ContractService {
      * @return 列表
      */
     public List<Contract> listService() {
-        String sql = "select c.id,title,pdf, (SELECT name from user where id=c.first) as first, (SELECT name from user where id=c.second) as second,c.date,start_date,end_date from contract as c";
+        String sql = "select c.id,title, (SELECT name from user where id=c.first) as first, (SELECT name from user where id=c.second) as second,c.date,start_date,end_date from contract as c";
         //转为驼峰命名
         return Contract.dao.find(sql);
     }
@@ -38,9 +38,9 @@ public class ContractService {
      * @param id 合同的唯一ID
      * @return PDF的文件对象
      */
-    public File lookPDFService(String id) {
-        String pdfName = Contract.dao.findById(id).getPdf();
-        return FileImageUtils.readPDF(pdfName);
+    public String lookPDFService(String id) {
+        return Contract.dao.findById(id).getPdf();
+
     }
 
     /**

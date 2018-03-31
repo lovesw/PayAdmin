@@ -1,7 +1,7 @@
 package com.pay.user.service;
 
 import cn.hutool.core.util.StrUtil;
-import com.pay.data.utils.FiledUtils;
+import com.pay.data.utils.FieldUtils;
 import com.pay.user.action.UserInfoAction;
 
 import static com.pay.user.action.UserInfoAction.CARD1;
@@ -25,7 +25,7 @@ public class ImageService {
     public String findImageNameService(String userId, int card, int type) {
         if (StrUtil.isNotBlank(userId)) {
             //如果身份证
-            if (type == FiledUtils.CARD) {
+            if (type == FieldUtils.CARD) {
                 switch (card) {
                     case 1:
                         return userId + CARD1;
@@ -36,7 +36,7 @@ public class ImageService {
                 }
 
             }          //其他类型的图片处理，在此处处理
-            else if (type == FiledUtils.HEADER) {
+            else if (type == FieldUtils.HEADER) {
                 return userId + UserInfoAction.HEADER;
             }
 
