@@ -1,5 +1,8 @@
 package com.pay.admin.service;
 
+import com.jfinal.upload.UploadFile;
+import com.pay.data.utils.FieldUtils;
+import com.pay.data.utils.FileImageUtils;
 import com.pay.data.utils.IdUtils;
 import com.pay.user.model.Invoice;
 
@@ -26,11 +29,15 @@ public class InvoiceService {
      * 添加发票对象
      *
      * @param invoice 发票信息对象
+     * @param img     发票扫描件
      * @return 添加的操作结果
      */
-    public boolean addService(Invoice invoice) {
-        invoice.setId(IdUtils.getId());
-        return invoice.save();
+    public boolean addService(UploadFile img, Invoice invoice) {
+        //生成图片名称
+        String imgName = IdUtils.getId();
+        //保存发票的扫面件
+        boolean bool = FileImageUtils.saveImageUtils(img, imgName, FieldUtils.INVOICE);
+        return bool && invoice.save();
     }
 
     /**
@@ -50,5 +57,15 @@ public class InvoiceService {
      */
     public boolean updateService(Invoice invoice) {
         return invoice.update();
+    }
+
+    /**
+     * 图片预览，获取图片的名称
+     *
+     * @param id 发票的Id
+     * @return 图片的名称
+     */
+    public String imageService(int id) {
+        return Invoice.dao.findById(id).getImg();
     }
 }

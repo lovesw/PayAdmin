@@ -49,6 +49,11 @@ public class FieldUtils {
      * 证件照保存的位置
      */
     public static final int CARD = 3;
+    /**
+     * 发票管理的文件位置
+     */
+    public static final int INVOICE = 4;
+
 
     /***
      * 上传文件的后缀

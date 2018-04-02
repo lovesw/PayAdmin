@@ -5,14 +5,10 @@ import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.StrUtil;
 import com.jfinal.upload.UploadFile;
 import com.pay.data.utils.FileImageUtils;
-import com.pay.data.utils.HumpToUnderline;
 import com.pay.user.model.Contract;
 
-import java.io.File;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
-import java.util.Random;
 
 /**
  * @createTime: 2018/3/9

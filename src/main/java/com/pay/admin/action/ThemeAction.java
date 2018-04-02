@@ -1,5 +1,6 @@
 package com.pay.admin.action;
 
+import com.jfinal.core.paragetter.Para;
 import com.pay.admin.service.ThemeService;
 import com.pay.data.controller.BaseController;
 import com.pay.user.model.Theme;
@@ -13,24 +14,25 @@ import java.util.List;
  * @description: 主题管理
  */
 public class ThemeAction extends BaseController {
-    private final ThemeService themeSerivce = new ThemeService();
+    private final ThemeService themeService = new ThemeService();
 
     /**
      * 添加主题信息
+     *
+     * @param theme 主题对象
      */
-    public void add() {
-        Theme theme = getBean(Theme.class, "");
-        boolean bool = themeSerivce.addService(theme);
+    public void add(@Para("") Theme theme) {
+        String userId = getUserId();
+        theme.setMakeId(userId);
+        boolean bool = themeService.addService(theme);
         result(bool);
     }
 
     /**
      * 用户查看主题列表
      */
-    public void userList() {
-        Date date = getParaToDate("date");
-        String userId = getPara("userId");
-        List<Theme> list = themeSerivce.userListService(date, userId);
+    public void userList(Date date, String userId) {
+        List<Theme> list = themeService.userListService(date, userId);
         success(list);
     }
 
@@ -39,7 +41,7 @@ public class ThemeAction extends BaseController {
      */
     public void adminList() {
         Date date = getParaToDate("date");
-        List<Theme> list = themeSerivce.adminListService(date);
+        List<Theme> list = themeService.adminListService(date);
         success(list);
     }
 
@@ -48,7 +50,7 @@ public class ThemeAction extends BaseController {
      */
     public void update() {
         Theme theme = getBean(Theme.class, "");
-        boolean bool = themeSerivce.updateService(theme);
+        boolean bool = themeService.updateService(theme);
         result(bool);
     }
 
@@ -58,7 +60,7 @@ public class ThemeAction extends BaseController {
     public void passTheme() {
         String id = getPara("id");
         boolean status = getParaToBoolean("status");
-        result(themeSerivce.passThemeService(id, status));
+        result(themeService.passThemeService(id, status));
     }
 
     /**
@@ -68,7 +70,7 @@ public class ThemeAction extends BaseController {
         String t = getPara("money");
         Double money = Double.valueOf(t);
         String id = getPara("id");
-        result(themeSerivce.turnoverService(id, money));
+        result(themeService.turnoverService(id, money));
     }
 
 

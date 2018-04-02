@@ -30,7 +30,7 @@ public class JwtUtil {
     /**
      * 由字符串生成加密key
      *
-     * @return
+     * @return 加密key
      */
     private static SecretKey generalKey() {
         byte[] encodedKey = Base64.decode(stringKey);
@@ -41,10 +41,9 @@ public class JwtUtil {
     /**
      * 创建jwt
      *
-     * @param id
-     * @param subject
-     * @return
-     * @throws Exception
+     * @param id      id
+     * @param subject 加密主题的内容
+     * @return token字符串
      */
     public static String createJWT(String id, String subject) {
         SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
@@ -67,15 +66,13 @@ public class JwtUtil {
     /**
      * 解密jwt
      *
-     * @param token
-     * @return
-     * @throws Exception
+     * @param token 解密的token
+     * @return Claims 对象
      */
     public static Claims parseJWT(String token) {
         SecretKey key = generalKey();
-        Claims claims = Jwts.parser()
+        return Jwts.parser()
                 .setSigningKey(key)
                 .parseClaimsJws(token).getBody();
-        return claims;
     }
 }

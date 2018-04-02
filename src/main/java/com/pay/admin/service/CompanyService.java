@@ -1,9 +1,11 @@
 package com.pay.admin.service;
 
 import cn.hutool.core.util.StrUtil;
+import com.jfinal.plugin.activerecord.Db;
 import com.pay.data.utils.IdUtils;
 import com.pay.user.model.Company;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -29,7 +31,10 @@ public class CompanyService {
      * @return 添加的操作结果
      */
     public boolean addService(Company company) {
-        company.setId(IdUtils.getId());
+        //设置默认为未启用状态
+        company.setStatus(false);
+        //设置公司的添加时间
+        company.setDate(new Date());
         return company.save();
     }
 
@@ -53,5 +58,17 @@ public class CompanyService {
      */
     public boolean updateService(Company company) {
         return company.update();
+    }
+
+    /**
+     * 修改公司状态
+     *
+     * @param id     公司的唯一标识符
+     * @param status 公司状态
+     * @return 是否修改成功
+     */
+    public boolean statusService(int id, boolean status) {
+        String sql = "update company set status=? where id=? and status=?";
+        return Db.update(sql, status, id, !status) > 0;
     }
 }

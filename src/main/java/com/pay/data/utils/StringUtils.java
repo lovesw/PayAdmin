@@ -13,7 +13,7 @@ public class StringUtils {
      * 定义数组不是null，不是空白字符串
      *
      * @param str 字符串数组
-     * @return
+     * @return 是否不是null，空白字符，不可见字符
      */
     public static boolean isNotBlank(String... str) {
         for (String s : str) {

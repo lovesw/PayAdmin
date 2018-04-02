@@ -1,11 +1,9 @@
 package com.pay.data.utils;
 
-import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.RandomUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -17,17 +15,6 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class IdUtils {
 
-
-    /**
-     * 订单Id生成器
-     *
-     * @return 生成的ID
-     */
-    public static synchronized String getOrderId() {
-        String format = DateUtil.format(new Date(), "yyyyMMddHHss");
-        return format + RandomUtil.randomNumbers(18);
-    }
-
     /**
      * 普通Id生成器,用时间戳随机打乱+指定位随机数生成，
      *
@@ -36,7 +23,7 @@ public class IdUtils {
     public static String getId() {
         //获取当前时间戳
         String str = String.valueOf(System.currentTimeMillis());
-        List<String> list = new ArrayList();
+        List<String> list = new ArrayList<>(13);
         //将时间戳放入到List中
         for (Character s : str.toCharArray()) {
             list.add(s.toString());
@@ -52,8 +39,8 @@ public class IdUtils {
     /**
      * 生成指定长度的一个数字字符串
      *
-     * @param num
-     * @return
+     * @param num 指定长度的随机数
+     * @return 随机数值
      */
     public static String randomNumber(int num) {
         if (num < 1) {
@@ -67,17 +54,4 @@ public class IdUtils {
     }
 
 
-    /**
-     * 生成一个纯数字的唯一标识符
-     *
-     * @return
-     */
-    public static String getUerId() {
-        return RandomUtil.randomNumbers(6);
-    }
-
-
-    public static void main(String[] args) {
-
-    }
 }

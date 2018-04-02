@@ -1,8 +1,10 @@
 package com.pay.admin.service;
 
+import com.jfinal.plugin.activerecord.Db;
 import com.pay.data.utils.IdUtils;
 import com.pay.user.model.Cooperation;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -30,7 +32,9 @@ public class CooperationService {
      * @return 添加的操作结果
      */
     public boolean addService(Cooperation cooperation) {
-        cooperation.setId(IdUtils.getId());
+        cooperation.setDate(new Date());
+        //设置默认为未启用状态
+        cooperation.setStatus(false);
         return cooperation.save();
     }
 
@@ -53,5 +57,16 @@ public class CooperationService {
         return cooperation.update();
     }
 
+    /**
+     * 修改合作公司状态
+     *
+     * @param id     合作公司的唯一标识符
+     * @param status 合作公司状态
+     * @return 是否修改成功
+     */
+    public boolean statusService(int id, boolean status) {
+        String sql = "update cooperation set status=? where id=? and status=?";
+        return Db.update(sql, status, id, !status) > 0;
+    }
 
 }

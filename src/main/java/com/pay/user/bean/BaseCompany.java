@@ -9,13 +9,13 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings({"serial", "unchecked"})
 public abstract class BaseCompany<M extends BaseCompany<M>> extends Model<M> implements IBean {
 
-	public M setId(java.lang.String id) {
+	public M setId(java.lang.Long id) {
 		set("id", id);
 		return (M)this;
 	}
 	
-	public java.lang.String getId() {
-		return getStr("id");
+	public java.lang.Long getId() {
+		return getLong("id");
 	}
 
 	public M setName(java.lang.String name) {
@@ -52,6 +52,15 @@ public abstract class BaseCompany<M extends BaseCompany<M>> extends Model<M> imp
 	
 	public java.lang.Boolean getStatus() {
 		return get("status");
+	}
+
+	public M setDate(java.util.Date date) {
+		set("date", date);
+		return (M)this;
+	}
+	
+	public java.util.Date getDate() {
+		return get("date");
 	}
 
 }

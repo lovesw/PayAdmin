@@ -1,6 +1,7 @@
 package com.pay.admin.action;
 
 import com.jfinal.aop.Before;
+import com.jfinal.core.paragetter.Para;
 import com.pay.admin.service.CooperationService;
 import com.pay.data.controller.BaseController;
 import com.pay.data.interceptors.Delete;
@@ -29,31 +30,47 @@ public class CooperationAction extends BaseController {
 
     /**
      * 添加合作公司信息
+     *
+     * @param cooperation 合作方方的实体
      */
     @Before(Post.class)
-    public void add() {
-        Cooperation cooperation = getBean(Cooperation.class, "");
+    public void add(@Para("") Cooperation cooperation) {
+
         result(cooperationService.addService(cooperation));
 
     }
 
     /**
      * 删除合作公司信息
+     *
+     * @param id 合作公司的唯一id
      */
     @Before(Delete.class)
-    public void delete() {
-        String id = getPara("id");
+    public void delete(String id) {
         result(cooperationService.deleteService(id));
     }
 
 
     /**
      * 更新合作公司的信息
+     *
+     * @param cooperation 合作方的实体信息
      */
     @Before(Put.class)
-    public void update() {
-        Cooperation cooperation = getBean(Cooperation.class, "");
+    public void update(@Para("") Cooperation cooperation) {
         result(cooperationService.updateService(cooperation));
+    }
+
+    /**
+     * 修改合作公司的状态
+     *
+     * @param id     合作公司的唯一标识符
+     * @param status 需要修改的状态(true:启用，false：禁用）
+     */
+    @Before(Put.class)
+    public void status(int id, boolean status) {
+        boolean bool = cooperationService.statusService(id, status);
+        result(bool, "公司状态修改失败");
     }
 
 }

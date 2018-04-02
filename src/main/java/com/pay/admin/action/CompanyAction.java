@@ -40,10 +40,11 @@ public class CompanyAction extends BaseController {
 
     /**
      * 删除公司信息
+     *
+     * @param id 公司的唯一id
      */
     @Before(Delete.class)
-    public void delete() {
-        String id = getPara("id");
+    public void delete(String id) {
         result(companyService.deleteService(id));
     }
 
@@ -55,6 +56,18 @@ public class CompanyAction extends BaseController {
     @Before(Put.class)
     public void update(@Para("") Company company) {
         result(companyService.updateService(company));
+    }
+
+    /**
+     * 修改公司的状态
+     *
+     * @param id     公司的唯一标识符
+     * @param status 需要修改的状态(true:启用，false：禁用）
+     */
+    @Before(Put.class)
+    public void status(int id, boolean status) {
+        boolean bool = companyService.statusService(id, status);
+        result(bool, "公司状态修改失败");
     }
 
 }

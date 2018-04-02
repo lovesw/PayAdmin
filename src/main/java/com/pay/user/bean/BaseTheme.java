@@ -36,13 +36,13 @@ public abstract class BaseTheme<M extends BaseTheme<M>> extends Model<M> impleme
 		return getStr("service_type");
 	}
 
-	public M setCooperationId(java.lang.String cooperationId) {
+	public M setCooperationId(java.lang.Long cooperationId) {
 		set("cooperation_id", cooperationId);
 		return (M)this;
 	}
 	
-	public java.lang.String getCooperationId() {
-		return getStr("cooperation_id");
+	public java.lang.Long getCooperationId() {
+		return getLong("cooperation_id");
 	}
 
 	public M setNum(java.lang.Integer num) {

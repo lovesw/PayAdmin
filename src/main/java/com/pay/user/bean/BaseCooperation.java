@@ -9,13 +9,13 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings({"serial", "unchecked"})
 public abstract class BaseCooperation<M extends BaseCooperation<M>> extends Model<M> implements IBean {
 
-	public M setId(java.lang.String id) {
+	public M setId(java.lang.Long id) {
 		set("id", id);
 		return (M)this;
 	}
 	
-	public java.lang.String getId() {
-		return getStr("id");
+	public java.lang.Long getId() {
+		return getLong("id");
 	}
 
 	public M setName(java.lang.String name) {
@@ -25,6 +25,15 @@ public abstract class BaseCooperation<M extends BaseCooperation<M>> extends Mode
 	
 	public java.lang.String getName() {
 		return getStr("name");
+	}
+
+	public M setFillname(java.lang.String fillname) {
+		set("fillname", fillname);
+		return (M)this;
+	}
+	
+	public java.lang.String getFillname() {
+		return getStr("fillname");
 	}
 
 	public M setContent(java.lang.String content) {
@@ -43,6 +52,15 @@ public abstract class BaseCooperation<M extends BaseCooperation<M>> extends Mode
 	
 	public java.util.Date getDate() {
 		return get("date");
+	}
+
+	public M setStatus(java.lang.Boolean status) {
+		set("status", status);
+		return (M)this;
+	}
+	
+	public java.lang.Boolean getStatus() {
+		return get("status");
 	}
 
 }

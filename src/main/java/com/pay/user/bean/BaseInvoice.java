@@ -9,22 +9,22 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings({"serial", "unchecked"})
 public abstract class BaseInvoice<M extends BaseInvoice<M>> extends Model<M> implements IBean {
 
-	public M setId(java.lang.String id) {
+	public M setId(java.lang.Long id) {
 		set("id", id);
 		return (M)this;
 	}
 	
-	public java.lang.String getId() {
-		return getStr("id");
+	public java.lang.Long getId() {
+		return getLong("id");
 	}
 
-	public M setCompanyId(java.lang.String companyId) {
+	public M setCompanyId(java.lang.Long companyId) {
 		set("company_id", companyId);
 		return (M)this;
 	}
 	
-	public java.lang.String getCompanyId() {
-		return getStr("company_id");
+	public java.lang.Long getCompanyId() {
+		return getLong("company_id");
 	}
 
 	public M setServiceType(java.lang.String serviceType) {
@@ -54,6 +54,15 @@ public abstract class BaseInvoice<M extends BaseInvoice<M>> extends Model<M> imp
 		return get("ticket_date");
 	}
 
+	public M setTicketType(java.lang.String ticketType) {
+		set("ticket_type", ticketType);
+		return (M)this;
+	}
+	
+	public java.lang.String getTicketType() {
+		return getStr("ticket_type");
+	}
+
 	public M setTicketId(java.lang.String ticketId) {
 		set("ticket_id", ticketId);
 		return (M)this;
@@ -72,15 +81,6 @@ public abstract class BaseInvoice<M extends BaseInvoice<M>> extends Model<M> imp
 		return getStr("ticket_num");
 	}
 
-	public M setBuyName(java.lang.String buyName) {
-		set("buy_name", buyName);
-		return (M)this;
-	}
-	
-	public java.lang.String getBuyName() {
-		return getStr("buy_name");
-	}
-
 	public M setGoodsName(java.lang.String goodsName) {
 		set("goods_name", goodsName);
 		return (M)this;
@@ -90,31 +90,31 @@ public abstract class BaseInvoice<M extends BaseInvoice<M>> extends Model<M> imp
 		return getStr("goods_name");
 	}
 
-	public M setCess(java.lang.String cess) {
+	public M setCess(java.lang.Float cess) {
 		set("cess", cess);
 		return (M)this;
 	}
 	
-	public java.lang.String getCess() {
-		return getStr("cess");
+	public java.lang.Float getCess() {
+		return getFloat("cess");
 	}
 
-	public M setCessTotal(java.lang.String cessTotal) {
+	public M setCessTotal(java.lang.Float cessTotal) {
 		set("cess_total", cessTotal);
 		return (M)this;
 	}
 	
-	public java.lang.String getCessTotal() {
-		return getStr("cess_total");
+	public java.lang.Float getCessTotal() {
+		return getFloat("cess_total");
 	}
 
-	public M setBillMonth(java.lang.String billMonth) {
+	public M setBillMonth(java.util.Date billMonth) {
 		set("bill_month", billMonth);
 		return (M)this;
 	}
 	
-	public java.lang.String getBillMonth() {
-		return getStr("bill_month");
+	public java.util.Date getBillMonth() {
+		return get("bill_month");
 	}
 
 	public M setBillDate(java.util.Date billDate) {
@@ -144,13 +144,22 @@ public abstract class BaseInvoice<M extends BaseInvoice<M>> extends Model<M> imp
 		return get("date");
 	}
 
-	public M setInvoiceType(java.lang.String invoiceType) {
+	public M setInvoiceType(java.lang.Boolean invoiceType) {
 		set("invoice_type", invoiceType);
 		return (M)this;
 	}
 	
-	public java.lang.String getInvoiceType() {
-		return getStr("invoice_type");
+	public java.lang.Boolean getInvoiceType() {
+		return get("invoice_type");
+	}
+
+	public M setImg(java.lang.String img) {
+		set("img", img);
+		return (M)this;
+	}
+	
+	public java.lang.String getImg() {
+		return getStr("img");
 	}
 
 }

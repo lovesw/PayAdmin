@@ -32,7 +32,9 @@ public class EducationService {
      * @return 添加的操作结果
      */
     public boolean addService(Education education) {
+        //设置主键
         education.setId(IdUtils.getId());
+        //设置添加的时间
         education.setDate(new Date());
         return education.save();
     }

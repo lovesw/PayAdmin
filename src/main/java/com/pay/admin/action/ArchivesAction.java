@@ -11,11 +11,9 @@ import com.pay.data.controller.BaseController;
 import com.pay.data.interceptors.Delete;
 import com.pay.data.interceptors.Get;
 import com.pay.data.interceptors.Post;
-import com.pay.data.utils.FileImageUtils;
 import com.pay.data.utils.FieldUtils;
+import com.pay.data.utils.FileImageUtils;
 import com.pay.user.model.Archives;
-
-import java.io.File;
 
 /**
  * @createTime: 2018/3/31
