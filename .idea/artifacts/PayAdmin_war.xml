@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="PayAdmin:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="JFinalDemo.war">
+    <root id="archive" name="PayAdmin.war">
       <element id="artifact" artifact-name="PayAdmin:war exploded" />
     </root>
   </artifact>

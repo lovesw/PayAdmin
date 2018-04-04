@@ -63,4 +63,13 @@ public abstract class BaseCooperation<M extends BaseCooperation<M>> extends Mode
 		return get("status");
 	}
 
+	public M setSeparate(java.lang.Boolean separate) {
+		set("separate", separate);
+		return (M)this;
+	}
+	
+	public java.lang.Boolean getSeparate() {
+		return get("separate");
+	}
+
 }

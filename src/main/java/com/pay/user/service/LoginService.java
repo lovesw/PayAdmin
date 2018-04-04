@@ -1,9 +1,12 @@
 package com.pay.user.service;
 
 import cn.hutool.crypto.SecureUtil;
-import com.pay.data.utils.StringUtils;
+import com.jfinal.aop.Before;
+import com.jfinal.plugin.activerecord.tx.Tx;
+import com.pay.data.utils.CommonUtils;
 import com.pay.user.model.Menu;
 import com.pay.user.model.Permission;
+import com.pay.user.model.Role;
 import com.pay.user.model.User;
 
 import java.util.List;
@@ -23,7 +26,7 @@ public class LoginService {
      */
     public User loginMethodService(String username, String password) {
 
-        if (StringUtils.isNotBlank(username, password)) {
+        if (CommonUtils.isNotBlank(username, password)) {
             String sql = "select * from user where id=? and password=? and mark=true";
             List<User> list = User.dao.find(sql, username, SecureUtil.md5(password));
             return list.isEmpty() ? null : list.get(0);
@@ -50,4 +53,5 @@ public class LoginService {
         String sql = "select * from menu where id in (select mid from role_menu where role_id in (select role_id from user_role where user_id=? ))";
         return Menu.dao.find(sql, username);
     }
+
 }

@@ -101,7 +101,7 @@ public class FileImageUtils {
         try {
             FileUtil.writeBytes(FileUtil.readBytes(file1), path);
             return true;
-        } catch (RuntimeException e) {
+        } catch (IORuntimeException e) {
             return false;
         }
     }
@@ -150,7 +150,7 @@ public class FileImageUtils {
             File file1 = file.getFile();
             FileUtil.writeBytes(FileUtil.readBytes(file1), path);
             return true;
-        } catch (Exception e) {
+        } catch (IORuntimeException e) {
             return false;
         }
     }
@@ -162,15 +162,7 @@ public class FileImageUtils {
      * @return 返回本地位置
      */
     private static String readUrlUtils(int type) {
-
-        try {
-            return LOCATION.get(type);
-        } catch (Exception e) {
-            log.info("文件位置类型参数错误");
-            return null;
-        }
-
-
+        return LOCATION.get(type);
     }
 
 
@@ -188,9 +180,29 @@ public class FileImageUtils {
             if (suffix.equals(ss)) {
                 return true;
             }
-
         }
         return false;
     }
 
+    /**
+     * 删除指定的文件
+     *
+     * @param fileName 文件名称
+     * @param type     文件类型
+     * @return 返回是否删除成功
+     */
+    public static boolean deleteFileUtils(String fileName, int type) {
+        //文件名称是空白或者是null的时候就直接返回
+        if (StrUtil.isBlank(fileName)) {
+            return false;
+        }
+        String path = readUrlUtils(type);
+        path += fileName;
+        try {
+            FileUtil.del(path);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

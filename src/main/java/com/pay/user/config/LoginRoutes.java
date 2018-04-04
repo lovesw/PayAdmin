@@ -23,6 +23,8 @@ public class LoginRoutes extends Routes {
         add("/u/e", ExperienceAction.class);
         //用户教育经历
         add("/u/ec", EducationAction.class);
+        //设计主题用户添加
+        add("/u/t", ThemeAction.class);
         //用户访问一些管理员添加的功能而用户不需要权限的资源
         add("/u/unp", UserNotPermissionAction.class);
 

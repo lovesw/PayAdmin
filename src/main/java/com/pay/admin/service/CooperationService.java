@@ -29,9 +29,15 @@ public class CooperationService {
      * 添加合作公司对象
      *
      * @param cooperation 合作公司信息对象
+     * @param type        分成类型
      * @return 添加的操作结果
      */
-    public boolean addService(Cooperation cooperation) {
+    public boolean addService(Cooperation cooperation, int type) {
+        //设置为按照主题分成
+        if (type == 1) {
+            cooperation.setSeparate(true);
+        }
+
         cooperation.setDate(new Date());
         //设置默认为未启用状态
         cooperation.setStatus(false);
@@ -69,4 +75,15 @@ public class CooperationService {
         return Db.update(sql, status, id, !status) > 0;
     }
 
+    /***
+     * 修改分成方式
+     * @param id id
+     * @param separate 分成类型1：主题，其他是：比例
+     * @return 是否修改成功
+     */
+    public boolean changeService(int id, int separate) {
+        String sql = "update cooperation set separate=? where id=?";
+        return Db.update(sql, separate == 1, id) > 0;
+
+    }
 }

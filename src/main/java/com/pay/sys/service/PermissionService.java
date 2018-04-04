@@ -123,8 +123,7 @@ public class PermissionService {
             roleMenu.setRoleId(roleId);
             roleMenuSet.add(roleMenu);
         }
-        List<RoleMenu> roleMenuList = new ArrayList<>();
-        roleMenuList.addAll(roleMenuSet);
+        List<RoleMenu> roleMenuList = new ArrayList<>(roleMenuSet);
         //批量添加菜单权限
         Db.batchSave(roleMenuList, roleMenuList.size());
         //批量添加业务权限
@@ -137,8 +136,7 @@ public class PermissionService {
             rolePermissionSet.add(rolePermission);
         }
         //将set 转为List
-        List<RolePermission> rolePermissionList1 = new ArrayList<>();
-        rolePermissionList1.addAll(rolePermissionSet);
+        List<RolePermission> rolePermissionList1 = new ArrayList<>(rolePermissionSet);
         Db.batchSave(rolePermissionList1, rolePermissionSet.size());
 
         return true;

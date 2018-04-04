@@ -1,8 +1,6 @@
 package com.pay.user.config;
 
 import com.jfinal.config.Routes;
-import com.pay.data.interceptors.LoginInterceptor;
-import com.pay.user.action.ImageAction;
 import com.pay.user.action.LoginAction;
 
 /**

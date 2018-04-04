@@ -2,12 +2,14 @@ package com.pay.sys.action;
 
 import cn.hutool.core.util.StrUtil;
 import com.jfinal.aop.Before;
+import com.jfinal.aop.Duang;
 import com.jfinal.core.paragetter.Para;
 import com.pay.data.controller.BaseController;
 import com.pay.data.interceptors.Delete;
 import com.pay.data.interceptors.Get;
 import com.pay.data.interceptors.Post;
 import com.pay.data.interceptors.Put;
+import com.pay.data.utils.FieldUtils;
 import com.pay.sys.service.PermissionService;
 import com.pay.user.model.Menu;
 import com.pay.user.model.Permission;
@@ -24,7 +26,7 @@ import java.util.Map;
  * @description: 权限管理，主要是对权限，角色，进行管理
  */
 public class PermissionAction extends BaseController {
-    private final PermissionService permissionService = new PermissionService();
+    private final PermissionService permissionService = Duang.duang(PermissionService.class);
 
 
     private final LoginService loginService = new LoginService();
@@ -60,6 +62,25 @@ public class PermissionAction extends BaseController {
         result(bool);
 
     }
+
+    /**
+     * 用于将角色标记为指定的类型
+     *
+     * @param type 标记的类型
+     */
+    @Before(Put.class)
+    public void mark(int type, Long id) {
+        if (type == 1) {
+            //设计师标记
+            FieldUtils.DESIGN = id;
+            success("标记身份成功");
+        } else {
+            error("标记身份失败");
+        }
+
+
+    }
+
     //****************************************** 授权管理**************************************************/
 
     /**
@@ -89,7 +110,14 @@ public class PermissionAction extends BaseController {
         if (StrUtil.isBlank(roleId.toString()) || menuId == null || menuId.length < 1 || permissionId == null || permissionId.length < 1) {
             result(false, "授权参数不正确");
         }
-        boolean bool = permissionService.addRolePermissionService(menuId, permissionId, roleId);
+        boolean bool;
+        try {
+            //事务异常捕获
+            bool = permissionService.addRolePermissionService(menuId, permissionId, roleId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            bool = false;
+        }
         result(bool);
 
     }
@@ -173,7 +201,13 @@ public class PermissionAction extends BaseController {
     @Before(Post.class)
     public void addUserRole(String userId) {
         Long[] roleId = getParaValuesToLong("roleId[]");
-        boolean bool = permissionService.addUserRoleService(userId, roleId);
+        boolean bool;
+        try {
+            //服务层涉及到事务，需要进行事务回滚异常捕获
+            bool = permissionService.addUserRoleService(userId, roleId);
+        } catch (RuntimeException e) {
+            bool = false;
+        }
         result(bool, "授予角色信息失败");
     }
 

@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="PayAdmin:war exploded">
-    <output-path>$PROJECT_DIR$/target/JFinalDemo</output-path>
+    <output-path>$PROJECT_DIR$/target/PayAdmin</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -9,10 +9,6 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: com.jfinal:jfinal-java8:3.3" />
           <element id="library" level="project" name="Maven: cglib:cglib-nodep:3.2.5" />
-          <element id="library" level="project" name="Maven: com.ibeetl:beetl:2.7.26" />
-          <element id="library" level="project" name="Maven: org.antlr:antlr4-runtime:4.2" />
-          <element id="library" level="project" name="Maven: org.abego.treelayout:org.abego.treelayout.core:1.0.1" />
-          <element id="library" level="project" name="Maven: org.antlr:antlr4-annotations:4.2" />
           <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache:2.10.4" />
           <element id="library" level="project" name="Maven: com.jfinal:cos:2017.5" />
           <element id="library" level="project" name="Maven: com.thetransactioncompany:cors-filter:2.6" />
@@ -40,7 +36,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/JFinalDemo/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/PayAdmin/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="PayAdmin/web/Web" />
     </root>

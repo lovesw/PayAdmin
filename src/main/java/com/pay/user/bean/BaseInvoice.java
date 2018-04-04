@@ -36,13 +36,13 @@ public abstract class BaseInvoice<M extends BaseInvoice<M>> extends Model<M> imp
 		return getStr("service_type");
 	}
 
-	public M setName(java.lang.String name) {
-		set("name", name);
+	public M setCooperationId(java.lang.Long cooperationId) {
+		set("cooperation_id", cooperationId);
 		return (M)this;
 	}
 	
-	public java.lang.String getName() {
-		return getStr("name");
+	public java.lang.Long getCooperationId() {
+		return getLong("cooperation_id");
 	}
 
 	public M setTicketDate(java.util.Date ticketDate) {
@@ -90,22 +90,22 @@ public abstract class BaseInvoice<M extends BaseInvoice<M>> extends Model<M> imp
 		return getStr("goods_name");
 	}
 
-	public M setCess(java.lang.Float cess) {
-		set("cess", cess);
+	public M setTariff(java.lang.Float tariff) {
+		set("tariff", tariff);
 		return (M)this;
 	}
 	
-	public java.lang.Float getCess() {
-		return getFloat("cess");
+	public java.lang.Float getTariff() {
+		return getFloat("tariff");
 	}
 
-	public M setCessTotal(java.lang.Float cessTotal) {
-		set("cess_total", cessTotal);
+	public M setTariffTotal(java.lang.Float tariffTotal) {
+		set("tariff_total", tariffTotal);
 		return (M)this;
 	}
 	
-	public java.lang.Float getCessTotal() {
-		return getFloat("cess_total");
+	public java.lang.Float getTariffTotal() {
+		return getFloat("tariff_total");
 	}
 
 	public M setBillMonth(java.util.Date billMonth) {
@@ -126,13 +126,13 @@ public abstract class BaseInvoice<M extends BaseInvoice<M>> extends Model<M> imp
 		return get("bill_date");
 	}
 
-	public M setCessMoney(java.lang.String cessMoney) {
-		set("cess_money", cessMoney);
+	public M setTariffMoney(java.lang.Double tariffMoney) {
+		set("tariff_money", tariffMoney);
 		return (M)this;
 	}
 	
-	public java.lang.String getCessMoney() {
-		return getStr("cess_money");
+	public java.lang.Double getTariffMoney() {
+		return getDouble("tariff_money");
 	}
 
 	public M setDate(java.util.Date date) {

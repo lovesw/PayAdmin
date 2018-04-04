@@ -16,7 +16,6 @@ import com.pay.user.config.ParaUserRoutes;
 import com.pay.user.config.UserRoutes;
 import com.pay.user.model._MappingKit;
 import lombok.extern.slf4j.Slf4j;
-import org.beetl.ext.jfinal3.JFinal3BeetlRenderFactory;
 
 /**
  * @createTime: 2018/2/8
@@ -34,11 +33,6 @@ public class PayAdminConfig extends JFinalConfig {
     public void configConstant(Constants constants) {
         //设置是否是开发者模式
         constants.setDevMode(true);
-
-        //beet sql整合
-        JFinal3BeetlRenderFactory rf = new JFinal3BeetlRenderFactory();
-        rf.config();
-        constants.setRenderFactory(rf);
     }
 
     @Override
@@ -73,15 +67,15 @@ public class PayAdminConfig extends JFinalConfig {
         //配置数据库连接池
         DruidPlugin druidPlugin = new DruidPlugin(prop.get("jdbcUrl"), prop.get("user"), prop.get("password").trim());
         plugins.add(druidPlugin);
-        //添加模型与表的映射
+        //创建连接池插件对象
         ActiveRecordPlugin activeRecordPlugin = new ActiveRecordPlugin(druidPlugin);
         //设置数据方言
         activeRecordPlugin.setDialect(new MysqlDialect());
         //设置显示sql语句
         activeRecordPlugin.setShowSql(true);
-        //应用插件
+        //应用连接池插件
         plugins.add(activeRecordPlugin);
-        //添加缓存插件使用
+        //添加ehcache缓存插件使用
         plugins.add(new EhCachePlugin());
         //添加表与实体的对应关系
         _MappingKit.mapping(activeRecordPlugin);

@@ -31,12 +31,12 @@ public class CooperationAction extends BaseController {
     /**
      * 添加合作公司信息
      *
+     * @param type        分成方式
      * @param cooperation 合作方方的实体
      */
     @Before(Post.class)
-    public void add(@Para("") Cooperation cooperation) {
-
-        result(cooperationService.addService(cooperation));
+    public void add(@Para("") Cooperation cooperation, int type) {
+        result(cooperationService.addService(cooperation, type));
 
     }
 
@@ -60,6 +60,18 @@ public class CooperationAction extends BaseController {
     public void update(@Para("") Cooperation cooperation) {
         result(cooperationService.updateService(cooperation));
     }
+
+    /**
+     * 修改分成方式
+     *
+     * @param id       合作公司的Id
+     * @param separate 分成类型
+     */
+    @Before(Put.class)
+    public void change(int id, int separate) {
+        result(cooperationService.changeService(id, separate));
+    }
+
 
     /**
      * 修改合作公司的状态

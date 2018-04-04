@@ -4,6 +4,7 @@ package com.pay.user.action;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
 import com.jfinal.aop.Before;
+import com.jfinal.aop.Duang;
 import com.jfinal.ext.interceptor.POST;
 import com.jfinal.plugin.ehcache.CacheKit;
 import com.pay.data.controller.BaseController;
@@ -96,4 +97,5 @@ public class LoginAction extends BaseController {
         }
 
     }
+
 }

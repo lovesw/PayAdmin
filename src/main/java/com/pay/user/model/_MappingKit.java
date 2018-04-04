@@ -28,6 +28,7 @@ public class _MappingKit {
 		arp.addMapping("money", "id", Money.class);
 		arp.addMapping("permission", "id", Permission.class);
 		arp.addMapping("project", "id", Project.class);
+		arp.addMapping("proportion", "id", Proportion.class);
 		arp.addMapping("punish", "id", Punish.class);
 		arp.addMapping("role", "id", Role.class);
 		// Composite Primary Key order: mid,role_id

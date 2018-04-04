@@ -20,7 +20,7 @@ public class AdminRoutes extends Routes {
         //管理员级别查看用户信息
         add("/admin/u", UserAction.class);
         //主题管理
-        add("/admin/t", ThemeAction.class);
+        add("/admin/t", ThemeAdminAction.class);
         //公司管理
         add("/admin/c", CompanyAction.class);
         //合作方管理
@@ -37,6 +37,8 @@ public class AdminRoutes extends Routes {
         add("/admin/p", PunishAction.class);
         //档案管理
         add("/admin/a", ArchivesAction.class);
+        //比例分成管理
+        add("/admin/pro", ProportionAction.class);
 
     }
 }

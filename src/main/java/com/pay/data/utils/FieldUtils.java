@@ -61,4 +61,8 @@ public class FieldUtils {
     public static final String SUFFIX = ".pdf";
 
 
+    /**
+     * 定义设计师的角色编号默认为5
+     */
+    public static Long DESIGN = 5L;
 }

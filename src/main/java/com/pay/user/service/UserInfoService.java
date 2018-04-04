@@ -8,10 +8,10 @@ import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.plugin.activerecord.tx.Tx;
 import com.jfinal.upload.UploadFile;
-import com.pay.data.utils.FileImageUtils;
+import com.pay.data.utils.CommonUtils;
 import com.pay.data.utils.FieldUtils;
+import com.pay.data.utils.FileImageUtils;
 import com.pay.data.utils.HttpClientUtils;
-import com.pay.data.utils.StringUtils;
 import com.pay.user.model.Role;
 import com.pay.user.model.User;
 
@@ -44,7 +44,7 @@ public class UserInfoService {
      */
     @Before(Tx.class)
     public boolean passwordService(String userId, String password, String oldPassword) {
-        if (!StringUtils.isNotBlank(userId, password, oldPassword)) {
+        if (!CommonUtils.isNotBlank(userId, password, oldPassword)) {
             return false;
         }
 

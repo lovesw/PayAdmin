@@ -9,22 +9,31 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings({"serial", "unchecked"})
 public abstract class BaseTheme<M extends BaseTheme<M>> extends Model<M> implements IBean {
 
-	public M setId(java.lang.String id) {
+	public M setId(java.lang.Long id) {
 		set("id", id);
 		return (M)this;
 	}
 	
-	public java.lang.String getId() {
-		return getStr("id");
+	public java.lang.Long getId() {
+		return getLong("id");
 	}
 
-	public M setUserId(java.lang.String userId) {
-		set("user_id", userId);
+	public M setDesignId(java.lang.String designId) {
+		set("design_id", designId);
 		return (M)this;
 	}
 	
-	public java.lang.String getUserId() {
-		return getStr("user_id");
+	public java.lang.String getDesignId() {
+		return getStr("design_id");
+	}
+
+	public M setMakeId(java.lang.String makeId) {
+		set("make_id", makeId);
+		return (M)this;
+	}
+	
+	public java.lang.String getMakeId() {
+		return getStr("make_id");
 	}
 
 	public M setServiceType(java.lang.String serviceType) {
@@ -45,22 +54,22 @@ public abstract class BaseTheme<M extends BaseTheme<M>> extends Model<M> impleme
 		return getLong("cooperation_id");
 	}
 
-	public M setNum(java.lang.Integer num) {
-		set("num", num);
+	public M setName(java.lang.String name) {
+		set("name", name);
 		return (M)this;
 	}
 	
-	public java.lang.Integer getNum() {
-		return getInt("num");
+	public java.lang.String getName() {
+		return getStr("name");
 	}
 
-	public M setThemeName(java.lang.String themeName) {
-		set("theme_name", themeName);
+	public M setEname(java.lang.String ename) {
+		set("ename", ename);
 		return (M)this;
 	}
 	
-	public java.lang.String getThemeName() {
-		return getStr("theme_name");
+	public java.lang.String getEname() {
+		return getStr("ename");
 	}
 
 	public M setShelvesDate(java.util.Date shelvesDate) {
@@ -70,15 +79,6 @@ public abstract class BaseTheme<M extends BaseTheme<M>> extends Model<M> impleme
 	
 	public java.util.Date getShelvesDate() {
 		return get("shelves_date");
-	}
-
-	public M setMakeId(java.lang.String makeId) {
-		set("make_id", makeId);
-		return (M)this;
-	}
-	
-	public java.lang.String getMakeId() {
-		return getStr("make_id");
 	}
 
 	public M setMoneyType(java.lang.String moneyType) {
@@ -108,22 +108,13 @@ public abstract class BaseTheme<M extends BaseTheme<M>> extends Model<M> impleme
 		return get("date");
 	}
 
-	public M setStatus(java.lang.Integer status) {
+	public M setStatus(java.lang.Boolean status) {
 		set("status", status);
 		return (M)this;
 	}
 	
-	public java.lang.Integer getStatus() {
-		return getInt("status");
-	}
-
-	public M setUserStatus(java.lang.Boolean userStatus) {
-		set("user_status", userStatus);
-		return (M)this;
-	}
-	
-	public java.lang.Boolean getUserStatus() {
-		return get("user_status");
+	public java.lang.Boolean getStatus() {
+		return get("status");
 	}
 
 }
