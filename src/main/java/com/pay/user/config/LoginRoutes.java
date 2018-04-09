@@ -27,6 +27,9 @@ public class LoginRoutes extends Routes {
         add("/u/t", ThemeAction.class);
         //用户访问一些管理员添加的功能而用户不需要权限的资源
         add("/u/unp", UserNotPermissionAction.class);
+        //用户访问一些管理员，但是同时需要权限的
+        add("/u/up", UserPermissionAction.class);
+
 
     }
 }

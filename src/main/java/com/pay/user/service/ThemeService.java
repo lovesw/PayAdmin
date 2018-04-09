@@ -1,5 +1,6 @@
 package com.pay.user.service;
 
+import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
 import com.jfinal.aop.Before;
 import com.jfinal.plugin.activerecord.Db;
@@ -52,6 +53,7 @@ public class ThemeService {
             return false;
         }
         //设置主题状态为待审核
+        theme.setStatus(0);
         return theme.update();
     }
 
@@ -62,9 +64,10 @@ public class ThemeService {
      * @return 主题信息列表
      */
     public List<Record> listService(Date date, String userId) {
-        String sql = "select date, t.id,(SELECT name from user as u WHERE u.id=t.design_id) as dname,service_type,(select name from cooperation as c where c.id=t.cooperation_id) as cname,name,ename,shelves_date,money_type,turnover,status  from theme as t where make_id=? and date_format(date,'%y-%m') = date_format(?,'%y-%m')";
-        return Db.find(sql, userId, date);
-        // list.forEach(x -> x.setTurnover(0.0));
+        String sql = "select (select name from company  as c where t.company_id=c.id) as coname, date,(select num from turnover where tid=t.id and date_format(date,'%y-%m') = date_format(?,'%y-%m')) as num , t.id,(SELECT name from user as u WHERE u.id=t.design_id) as dname,service_type,(select name from cooperation as c where c.id=t.cooperation_id) as cname,name,ename,shelves_date,money_type,status  from theme as t where make_id=? and date_format(shelves_date,'%y-%m') = date_format(?,'%y-%m')";
+        //上个月的营业额
+        Date date1 = DateUtil.offsetMonth(new Date(), -1);
+        return Db.find(sql, date1, userId, date);
     }
 
     /**
@@ -87,7 +90,7 @@ public class ThemeService {
      * @return 返回是否添加成功
      */
     @Before(Tx.class)
-    public boolean addService(String serviceType, Long cooperationId, String makeId, List<ThemeEntity> list) {
+    public boolean addService(String serviceType, Long cooperationId, Long companyId, String makeId, List<ThemeEntity> list) {
         List<Theme> themeList = new ArrayList<>(list.size());
         Date date = new Date();
         list.forEach(themeEntity -> {
@@ -101,6 +104,7 @@ public class ThemeService {
             theme.setMoneyType(themeEntity.getMoneyType());
             theme.setDesignId(themeEntity.getDesignId());
             theme.setDate(date);
+            theme.setCompanyId(companyId);
             themeList.add(theme);
         });
         if (Db.batchSave(themeList, themeList.size()).length == list.size()) {
@@ -116,7 +120,7 @@ public class ThemeService {
      * @return 设计师列表
      */
     public List<Record> uListService() {
-        String sql = "select id,name from user where id in (select user_id from user_role where role_id=?)";
+        String sql = "select id,name from user where id in (select user_id from user_role where role_id=?) and mark=true";
         return Db.find(sql, FieldUtils.DESIGN);
     }
 
@@ -128,8 +132,39 @@ public class ThemeService {
      * @return 主题集合
      */
     public List<Record> allListService(Date date, String userId) {
-        String sql = "select date, t.id,(SELECT name from user as u WHERE u.id=t.design_id) as dname,service_type,(select name from cooperation as c where c.id=t.cooperation_id) as cname,(SELECT name from user as u where u.id=t.make_id) as mname,name,ename,shelves_date,money_type,turnover,status  from theme as t where (make_id=? or design_id=?) and date_format(date,'%y-%m') = date_format(?,'%y-%m')";
-        return Db.find(sql, userId, userId, date);
+        String sql = "select (select name from company  as c where t.company_id=c.id) as coname, date, t.id,(SELECT name from user as u WHERE u.id=t.design_id) as dname,(select num from turnover where tid=t.id and date_format(date,'%y-%m') = date_format(?,'%y-%m')) as num ,service_type,(select name from cooperation as c where c.id=t.cooperation_id) as cname,(SELECT name from user as u where u.id=t.make_id) as mname,name,ename,shelves_date,money_type,status  from theme as t where (make_id=? or design_id=?) and date_format(shelves_date,'%y-%m') = date_format(?,'%y-%m')";
+        //上个月的营业额
+        Date date1 = DateUtil.offsetMonth(new Date(), -1);
+        return Db.find(sql, date1, userId, userId, date);
+
+    }
+
+    /**
+     * 查看主题的原因
+     *
+     * @param tid 主题的Id
+     * @return 返回原因列表
+     */
+    public List<Record> lookCausationService(int tid) {
+        //检测当前的主题是否存在
+        Theme theme = Theme.dao.findById(tid);
+        //判断是否是未通过的主题
+        if (theme != null && theme.getStatus().equals(FieldUtils.THEME_STATUS_2)) {
+            String sql = "select content from causation where tid=?";
+            return Db.find(sql, tid);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * 公司列表
+     *
+     * @return 公司的id，公司名称集合
+     */
+    public List<Record> coListService() {
+        String sql = "select id,name from company where  status=true";
+        return Db.find(sql);
 
     }
 }

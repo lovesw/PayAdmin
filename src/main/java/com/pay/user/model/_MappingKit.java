@@ -17,6 +17,7 @@ public class _MappingKit {
 	
 	public static void mapping(ActiveRecordPlugin arp) {
 		arp.addMapping("archives", "id", Archives.class);
+		arp.addMapping("causation", "id", Causation.class);
 		arp.addMapping("company", "id", Company.class);
 		arp.addMapping("contract", "id", Contract.class);
 		arp.addMapping("cooperation", "id", Cooperation.class);
@@ -36,6 +37,7 @@ public class _MappingKit {
 		// Composite Primary Key order: permission_id,role_id
 		arp.addMapping("role_permission", "permission_id,role_id", RolePermission.class);
 		arp.addMapping("theme", "id", Theme.class);
+		arp.addMapping("turnover", "id", Turnover.class);
 		arp.addMapping("user", "id", User.class);
 		arp.addMapping("user_info", "user_id", UserInfo.class);
 		// Composite Primary Key order: role_id,user_id

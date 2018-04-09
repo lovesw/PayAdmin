@@ -6,10 +6,13 @@ import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONUtil;
 import com.jfinal.aop.Before;
 import com.jfinal.aop.Duang;
+import com.jfinal.core.paragetter.Para;
 import com.pay.data.controller.BaseController;
 import com.pay.data.entity.ThemeEntity;
+import com.pay.data.interceptors.Get;
 import com.pay.data.interceptors.PermissionInterceptor;
 import com.pay.data.interceptors.Post;
+import com.pay.data.interceptors.Put;
 import com.pay.user.model.Theme;
 import com.pay.user.service.ThemeService;
 
@@ -37,7 +40,7 @@ public class ThemeAction extends BaseController {
      * @param str           批量的主题信息
      */
     @Before(Post.class)
-    public void add(String serviceType, Long cooperationId, String str) {
+    public void add(String serviceType, Long cooperationId, Long companyId, String str) {
         String makeId = getUserId();
 
         //将传入的数组转为jsonArray
@@ -45,20 +48,30 @@ public class ThemeAction extends BaseController {
         //将jsonArray转为MakeDesign集合
         List<ThemeEntity> list = JSONUtil.toList(jsonArray, ThemeEntity.class);
 
-        boolean bool = themeService.addService(serviceType, cooperationId, makeId, list);
+        boolean bool = themeService.addService(serviceType, cooperationId, companyId, makeId, list);
         result(bool);
     }
 
     /**
-     * 按商家列表
+     * 查看商家列表
      */
+    @Before(Get.class)
     public void clist() {
         success(themeService.cListService());
     }
 
     /**
+     * 查看公司列表
+     */
+    @Before(Get.class)
+    public void coList() {
+        success(themeService.coListService());
+    }
+
+    /**
      * 获取用户列表，就是在用户填写选择设计人的时候的接口
      */
+    @Before(Get.class)
     public void ulist() {
         success(themeService.uListService());
     }
@@ -66,6 +79,7 @@ public class ThemeAction extends BaseController {
     /**
      * 用户查看主题列表
      */
+    @Before(Get.class)
     public void list(String date) {
         if (StrUtil.isBlank(date)) {
             error("查询参数不正确");
@@ -79,6 +93,7 @@ public class ThemeAction extends BaseController {
     /**
      * 查询指定的月份的所有相关的主题信息
      */
+    @Before(Get.class)
     public void allList(String date) {
         if (StrUtil.isBlank(date)) {
             error("查询参数不正确");
@@ -89,14 +104,22 @@ public class ThemeAction extends BaseController {
         }
     }
 
-
     /**
      * 上传者修改用户信息
      */
-    public void update() {
-        Theme theme = getBean(Theme.class, "");
+    @Before(Put.class)
+    public void update(@Para("") Theme theme) {
         boolean bool = themeService.updateService(theme);
         result(bool);
     }
 
+    /**
+     * 点击查看为未通过主题的原因
+     *
+     * @param tid 主题的Id
+     */
+    @Before(Get.class)
+    public void lookCausation(int tid) {
+        success(themeService.lookCausationService(tid));
+    }
 }

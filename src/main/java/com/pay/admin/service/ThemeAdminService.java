@@ -1,7 +1,9 @@
 package com.pay.admin.service;
 
 import com.jfinal.plugin.activerecord.Db;
+import com.jfinal.plugin.activerecord.Record;
 import com.pay.data.utils.FieldUtils;
+import com.pay.user.model.Causation;
 import com.pay.user.model.Theme;
 
 import java.util.Date;
@@ -18,17 +20,12 @@ public class ThemeAdminService {
     /**
      * 查看指定年月日的主题信息
      *
-     * @param date 指定时间
      * @return 主题信息列表
      */
-    public List<Theme> adminListService(Date date) {
-        String sql = "select * from theme where ";
-        if (date != null) {
-            sql += " date_format(date,'%y-%m') = date_format(?,'%y-%m')";
-        }
-        return Theme.dao.find(sql, date);
+    public List<Record> adminListService() {
+        String sql = "select date, t.id,(SELECT name from user as u WHERE u.id=t.design_id) as dname,service_type,(select name from cooperation as c where c.id=t.cooperation_id) as cname,(SELECT name from user as u where u.id=t.make_id) as mname,name,ename,shelves_date,money_type,status  from theme as t where t.status=?";
+        return Db.find(sql, FieldUtils.THEME_STATUS_0);
     }
-
 
 
     /**
@@ -36,15 +33,23 @@ public class ThemeAdminService {
      *
      * @param id     主题的唯一ID
      * @param status 状态
+     * @param msg    错误消息提示
      * @return 操作结果
      */
-    public boolean passThemeService(String id, boolean status) {
-        if (status) {
-            String sql = "update theme set status=? and set user_status=false where id=? and  user_status=true";
-            return Db.update(sql, FieldUtils.THEME_STATUS_1, id) > 0;
+    public boolean passService(Long id, int status, String msg) {
+        if (status == FieldUtils.THEME_STATUS_1 || status == FieldUtils.THEME_STATUS_2) {
+            String sql = "update theme set status=?  where id=? ";
+            //如果未通过就添加未通过的原因
+            if (status == FieldUtils.THEME_STATUS_2) {
+                Causation causation = new Causation();
+                causation.setContent(msg);
+                causation.setDate(new Date());
+                causation.setTid(id);
+                causation.save();
+            }
+            return Db.update(sql, status, id) > 0;
         } else {
-            String sql = "update theme set status=? and set user_status=false where id=? and user_status=true";
-            return Db.update(sql, FieldUtils.THEME_STATUS_2, id) > 0;
+            return false;
         }
 
     }

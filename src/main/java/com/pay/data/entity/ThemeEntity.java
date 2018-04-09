@@ -26,7 +26,7 @@ public class ThemeEntity {
     /**
      * 销售类型
      */
-    private String moneyType;
+    private Integer moneyType;
 
     /**
      * 上架时间

@@ -45,6 +45,15 @@ public abstract class BaseTheme<M extends BaseTheme<M>> extends Model<M> impleme
 		return getStr("service_type");
 	}
 
+	public M setCompanyId(java.lang.Long companyId) {
+		set("company_id", companyId);
+		return (M)this;
+	}
+	
+	public java.lang.Long getCompanyId() {
+		return getLong("company_id");
+	}
+
 	public M setCooperationId(java.lang.Long cooperationId) {
 		set("cooperation_id", cooperationId);
 		return (M)this;
@@ -81,22 +90,13 @@ public abstract class BaseTheme<M extends BaseTheme<M>> extends Model<M> impleme
 		return get("shelves_date");
 	}
 
-	public M setMoneyType(java.lang.String moneyType) {
+	public M setMoneyType(java.lang.Integer moneyType) {
 		set("money_type", moneyType);
 		return (M)this;
 	}
 	
-	public java.lang.String getMoneyType() {
-		return getStr("money_type");
-	}
-
-	public M setTurnover(java.lang.Double turnover) {
-		set("turnover", turnover);
-		return (M)this;
-	}
-	
-	public java.lang.Double getTurnover() {
-		return getDouble("turnover");
+	public java.lang.Integer getMoneyType() {
+		return getInt("money_type");
 	}
 
 	public M setDate(java.util.Date date) {
@@ -108,13 +108,13 @@ public abstract class BaseTheme<M extends BaseTheme<M>> extends Model<M> impleme
 		return get("date");
 	}
 
-	public M setStatus(java.lang.Boolean status) {
+	public M setStatus(java.lang.Integer status) {
 		set("status", status);
 		return (M)this;
 	}
 	
-	public java.lang.Boolean getStatus() {
-		return get("status");
+	public java.lang.Integer getStatus() {
+		return getInt("status");
 	}
 
 }
