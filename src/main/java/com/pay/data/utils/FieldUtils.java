@@ -23,6 +23,14 @@ public class FieldUtils {
      * 主题的状态为未通过
      */
     public static final Integer THEME_STATUS_2 = 2;
+    /**
+     * 主题为收费类型
+     */
+    public static final Integer THEME_MONEY_1 = 1;
+    /**
+     * 主题免费类型
+     */
+    public static final Integer THEME_MONEY_0 = 0;
 
     /**
      * 惩罚记录默认的状态

@@ -53,22 +53,6 @@ public class ThemeAction extends BaseController {
     }
 
     /**
-     * 查看商家列表
-     */
-    @Before(Get.class)
-    public void clist() {
-        success(themeService.cListService());
-    }
-
-    /**
-     * 查看公司列表
-     */
-    @Before(Get.class)
-    public void coList() {
-        success(themeService.coListService());
-    }
-
-    /**
      * 获取用户列表，就是在用户填写选择设计人的时候的接口
      */
     @Before(Get.class)

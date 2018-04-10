@@ -2,6 +2,7 @@ package com.pay.user.service;
 
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
+import com.pay.data.utils.FieldUtils;
 
 import java.util.Date;
 import java.util.List;
@@ -22,4 +23,23 @@ public class UserPermissionService {
         String sql = "select name,p.id,month,make,design from proportion as p,cooperation as co  where co.id=p.cooperation_id and month=?";
         return Db.find(sql, date);
     }
+
+    /**
+     * 获取公司列表
+     */
+    public List<Record> companyListService() {
+        String sql = "select id,name from company where  status=true";
+        return Db.find(sql);
+    }
+
+    /**
+     * 查询按照主题分成的合作商家
+     *
+     * @return 商家信息
+     */
+    public List<Record> cooperationListService() {
+        String sql = "select id,name,fillname from cooperation";
+        return Db.find(sql);
+    }
+
 }

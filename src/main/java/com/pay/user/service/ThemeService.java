@@ -70,15 +70,6 @@ public class ThemeService {
         return Db.find(sql, date1, userId, date);
     }
 
-    /**
-     * 查询按照主题分成的合作商家
-     *
-     * @return 商家信息
-     */
-    public List<Record> cListService() {
-        String sql = "select id,name,fillname from cooperation";
-        return Db.find(sql);
-    }
 
     /**
      * 批量添加主题
@@ -155,16 +146,5 @@ public class ThemeService {
         } else {
             return null;
         }
-    }
-
-    /**
-     * 公司列表
-     *
-     * @return 公司的id，公司名称集合
-     */
-    public List<Record> coListService() {
-        String sql = "select id,name from company where  status=true";
-        return Db.find(sql);
-
     }
 }

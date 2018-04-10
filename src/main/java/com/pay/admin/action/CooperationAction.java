@@ -20,7 +20,7 @@ public class CooperationAction extends BaseController {
 
 
     /**
-     * 合作公司列表信息
+     * 合作商家列表信息
      */
     @Before(Get.class)
     public void list() {
