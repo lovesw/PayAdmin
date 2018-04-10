@@ -6,7 +6,93 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2b4c74e-688f-4309-8ebb-a503bdf2e89e" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/pay/data/entity/ScaleEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pay/user/bean/BaseArchives.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pay/user/bean/BaseCausation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pay/user/bean/BaseFillturnover.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pay/user/bean/BaseProportion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pay/user/bean/BaseScale.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pay/user/bean/BaseTurnover.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pay/user/model/Archives.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pay/user/model/Causation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pay/user/model/Fillturnover.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pay/user/model/Proportion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pay/user/model/Scale.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pay/user/model/Turnover.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/小编力荐软件.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/小编力荐软件1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/小编力荐软件2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/新品榜单精选.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/新品榜单精选1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/新品榜单精选2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/新品榜单精选3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/新品榜单精选4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/新品榜单精选5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/新品榜单精选6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/热门软件精选.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/热门软件精选1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/热门软件精选2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/热门软件精选3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/upload/组 3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/beetl.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/action/ArchivesAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/action/CompanyAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/action/ContractAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/action/CooperationAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/action/EquipmentAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/action/InvoiceAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/action/ProjectAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/action/ProportionAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/action/PunishAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/action/ThemeAdminAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/action/TurnoverAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/action/UserAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/config/AdminRoutes.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/service/ArchivesService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/service/CompanyService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/service/ContractService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/service/CooperationService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/service/EquipmentService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/service/InvoiceService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/service/ProjectService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/service/ProportionService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/service/PunishService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/service/ThemeAdminService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/service/TurnoverService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/config/PayAdminConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/controller/BaseController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/entity/MakeDesign.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/entity/Result.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/entity/ScaleEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/entity/ThemeEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/entity/TurnoverEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/enums/ExceptionEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/exception/ResultException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/interceptors/Delete.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/interceptors/ExceptionInterceptor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/interceptors/Get.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/interceptors/LoginInterceptor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/interceptors/ParaInterceptor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/interceptors/PermissionInterceptor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/interceptors/Post.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/interceptors/Put.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/myfilter/EncodingFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/myfilter/XssFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/myfilter/XssHttpServletRequestWrapperNew.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/utils/CommonUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/utils/FieldUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/utils/FileImageUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/utils/HttpClientUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/utils/IdUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/utils/JwtUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/utils/ResultUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/validator/BaseValidator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/data/validator/LoginValidator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/sys/action/PermissionAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/sys/config/SysRoutes.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/sys/service/PermissionService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/pay/sys/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/admin/action/TurnoverAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/admin/action/TurnoverAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/admin/service/TurnoverService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/admin/service/TurnoverService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/user/action/ThemeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/user/action/ThemeAction.java" afterDir="false" />
@@ -54,7 +140,7 @@
       <file leaf-file-name="TurnoverService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/service/TurnoverService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
+            <state relative-caret-position="254">
               <caret line="180" column="23" lean-forward="true" selection-start-line="180" selection-start-column="23" selection-end-line="180" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -268,86 +354,6 @@
             <path>
               <item name="PayAdmin" type="b2602c69:ProjectViewProjectNode" />
               <item name="PayAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PayAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PayAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pay" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PayAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PayAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pay" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PayAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PayAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pay" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="action" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PayAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PayAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pay" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PayAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PayAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pay" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PayAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PayAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pay" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PayAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PayAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pay" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="action" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PayAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PayAdmin" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -549,7 +555,7 @@
       <workItem from="1522716897871" duration="22919000" />
       <workItem from="1522803294544" duration="26471000" />
       <workItem from="1523235429852" duration="22488000" />
-      <workItem from="1523321606362" duration="23733000" />
+      <workItem from="1523321606362" duration="23976000" />
     </task>
     <task id="LOCAL-00001" summary="1:删除了webapp下upload的下的图片文件">
       <created>1522218159128</created>
@@ -604,7 +610,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195867000" />
+    <option name="totallyTimeSpent" value="196110000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -635,8 +641,8 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.3293348" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.24840085" weight="0.35877863" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.71428573" visible="true" weight="0.22137405" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.24840085" visible="true" weight="0.35877863" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.71428573" weight="0.478735" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.33369684" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15138593" />
       <window_info id="Web" order="2" side_tool="true" />
@@ -1132,7 +1138,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/service/TurnoverService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
+        <state relative-caret-position="254">
           <caret line="180" column="23" lean-forward="true" selection-start-line="180" selection-start-column="23" selection-end-line="180" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
