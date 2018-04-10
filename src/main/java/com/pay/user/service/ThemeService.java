@@ -106,14 +106,6 @@ public class ThemeService {
         }
     }
 
-    /***
-     * 获取用户的信息
-     * @return 设计师列表
-     */
-    public List<Record> uListService() {
-        String sql = "select id,name from user where id in (select user_id from user_role where role_id=?) and mark=true";
-        return Db.find(sql, FieldUtils.DESIGN);
-    }
 
     /**
      * 查询与指定员工相关的设计主题

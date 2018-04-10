@@ -48,6 +48,13 @@ public class UserPermissionAction extends BaseController {
         success(userPermissionService.cooperationListService());
     }
 
+    /**
+     * 获取用户列表，就是在用户填写选择设计人的时候的接口
+     */
+    @Before(Get.class)
+    public void designList() {
+        success(userPermissionService.designListService());
 
+    }
 
 }

@@ -3,10 +3,13 @@ package com.pay.admin.service;
 import cn.hutool.core.date.DateUtil;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
+import com.pay.data.entity.ScaleEntity;
 import com.pay.data.entity.TurnoverEntity;
 import com.pay.data.utils.CommonUtils;
 import com.pay.data.utils.FieldUtils;
+import com.pay.user.model.Cooperation;
 import com.pay.user.model.Fillturnover;
+import com.pay.user.model.Scale;
 import com.pay.user.model.Turnover;
 
 import java.util.ArrayList;
@@ -61,15 +64,66 @@ public class TurnoverService {
             turnover.setDate(date);
             turnoverList.add(turnover);
         }
+        //标记上个月已经添加了
+        Fillturnover fillturnover = getFillturnover(cooperationId, date);
+
+
+        return fillturnover.save() && Db.batchSave(turnoverList, turnoverList.size()).length > 0;
+
+    }
+
+    /**
+     * 获取一个记录上月该主题市场已经填写过的对象
+     *
+     * @param cooperationId 市场
+     * @param date          月份
+     * @return Fillturnover 对象
+     */
+    private Fillturnover getFillturnover(Long cooperationId, Date date) {
         //记录date时间是否填写
         Fillturnover fillturnover = new Fillturnover();
         fillturnover.setCooperationId(cooperationId);
         fillturnover.setDate(date);
         fillturnover.setStatus(true);
+        return fillturnover;
+    }
 
-
-        return fillturnover.save() && Db.batchSave(turnoverList, turnoverList.size()).length > 0;
-
+    /**
+     * 添加按照比例分成
+     *
+     * @param list          比例集合
+     * @param cooperationId 合作市场
+     * @param money         市场总金额
+     * @return 是否添加成功
+     */
+    public boolean sAddService(List<ScaleEntity> list, Long cooperationId, Double money) {
+        Date date = CommonUtils.getLastMonth();
+        //判断当前月是否已经添加了
+        if (!checkService(cooperationId)) {
+            return false;
+        }
+        List<Scale> scaleList = new ArrayList<>(list.size());
+        //临时变量，用来计算最终的比例是否是%
+        Double sum = 0.0;
+        for (ScaleEntity scaleEntity : list) {
+            Scale scale = new Scale();
+            scale.setCooperationId(cooperationId);
+            scale.setMonth(date);
+            //设置总金额
+            scale.setPay(money);
+            //设置分配比例
+            scale.setRatio(scaleEntity.getNum());
+            scale.setUserId(scaleEntity.getId());
+            sum += scaleEntity.getNum();
+            scaleList.add(scale);
+        }
+        //看看将全部的金额分配出去了
+        if (sum != 100) {
+            return false;
+        }
+        //标记上个月已经添加了
+        Fillturnover fillturnover = getFillturnover(cooperationId, date);
+        return fillturnover.save() && Db.batchSave(scaleList, scaleList.size()).length > 0;
     }
 
     /**
@@ -94,5 +148,42 @@ public class TurnoverService {
         Date date = CommonUtils.getLastMonth();
         String sql = "update turnover set num=? where tid=? and date=?";
         return Db.update(sql, num, tid, date) > 0;
+    }
+
+    /**
+     * 市场相关的人员
+     *
+     * @param cooperationId 市场Id
+     * @return 相关设计人员的信息
+     */
+    public List<Record> sListService(Long cooperationId) {
+        Cooperation cooperation = Cooperation.dao.findById(cooperationId);
+        if (cooperation == null) {
+            return null;
+        } else {
+            //如果是按照主题分成就直接返回，不做查询
+            if (cooperation.getSeparate()) {
+                return null;
+            }
+
+            String sql = "select scale.id, num,month,pay,u.id,u.name from scale,user as u where u.id=scale.user_id and cooperation_id=? and date_format(date,'%y-%d')=date_format(?,'%y-%d') ";
+            return Db.find(sql, cooperationId, CommonUtils.getLastMonth());
+        }
+
+
+    }
+
+    /**
+     * 修改比例分成信息
+     *
+     * @param id  比例分成的唯一Id
+     * @param num 分成比例
+     * @return 返回是否修改成功
+     */
+    public boolean sUpdateService(Long id, Double num) {
+        String sql = "update scale set ratio=? where id=? ";
+        return Db.update(sql, num, id) > 0;
+
+
     }
 }

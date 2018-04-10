@@ -52,13 +52,6 @@ public class ThemeAction extends BaseController {
         result(bool);
     }
 
-    /**
-     * 获取用户列表，就是在用户填写选择设计人的时候的接口
-     */
-    @Before(Get.class)
-    public void ulist() {
-        success(themeService.uListService());
-    }
 
     /**
      * 用户查看主题列表

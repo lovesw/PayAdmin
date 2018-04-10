@@ -6,6 +6,7 @@ import cn.hutool.json.JSONUtil;
 import com.jfinal.aop.Before;
 import com.pay.admin.service.TurnoverService;
 import com.pay.data.controller.BaseController;
+import com.pay.data.entity.ScaleEntity;
 import com.pay.data.entity.TurnoverEntity;
 import com.pay.data.interceptors.Get;
 import com.pay.data.interceptors.Post;
@@ -20,6 +21,7 @@ import java.util.List;
  */
 public class TurnoverAction extends BaseController {
     private static final TurnoverService turnoverService = new TurnoverService();
+    //*****************************************************按照主题分成*****************************************************//
 
     /**
      * 查询近6个月的主题在上个月的盈利列表
@@ -75,4 +77,50 @@ public class TurnoverAction extends BaseController {
 
     }
 
+    //*****************************************************按照比例分成*****************************************************//
+
+    /**
+     * 添加比例分成
+     *
+     * @param str           Json格式的数据
+     * @param cooperationId 合作市场
+     * @param money         分配的金额
+     */
+    public void sAdd(String str, Long cooperationId, Double money) {
+
+        if (StrUtil.isBlank(str) || cooperationId == null || money <= 0) {
+            error("参数传递不正确");
+        } else {
+            JSONArray jsonArray = JSONUtil.parseArray(str);
+            //将jsonArray转为TurnoverEntity集合
+            List<ScaleEntity> list = JSONUtil.toList(jsonArray, ScaleEntity.class);
+            boolean bool = turnoverService.sAddService(list, cooperationId, money);
+            result(bool, "添加失败");
+        }
+    }
+
+    /**
+     * 查看指定的市场的分成信息
+     */
+    public void sList(Long cooperationId) {
+        if (cooperationId == null) {
+            error("合作市场不正确");
+        } else {
+            success(turnoverService.sListService(cooperationId));
+        }
+    }
+
+    /**
+     * 修改比例分成的信息
+     *
+     * @param id  唯一Id
+     * @param num 修改的金额
+     */
+    public void sUpdate(Long id, Double num) {
+        if (id == null || num == null) {
+            error("修改参数不正确");
+        } else {
+            result(turnoverService.sUpdateService(id, num), "修改失败");
+        }
+    }
 }

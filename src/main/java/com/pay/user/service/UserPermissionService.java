@@ -38,8 +38,17 @@ public class UserPermissionService {
      * @return 商家信息
      */
     public List<Record> cooperationListService() {
-        String sql = "select id,name,fillname from cooperation";
+        String sql = "select id,name,fillname,separate from cooperation where status=true";
         return Db.find(sql);
+    }
+
+    /***
+     * 获取用户的信息
+     * @return 设计师列表
+     */
+    public List<Record> designListService() {
+        String sql = "select id,name from user where id in (select user_id from user_role where role_id=?) and mark=true";
+        return Db.find(sql, FieldUtils.DESIGN);
     }
 
 }
