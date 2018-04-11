@@ -65,7 +65,8 @@ public class UserInfoService {
      */
     public Object userInfoAllService(String userId) {
         String sql = "select  u.* ,uf.* from user as u LEFT JOIN user_info as uf on uf.user_id=u.id and u.id=? where u.id=?";
-        return Db.find(sql, userId, userId);
+        String sql1 = "select  u.*,(select name from department as d where d.id=u.department) as department,(select name from department as d where d.id=u.position) as position ,uf.* from user as u LEFT JOIN user_info as uf on uf.user_id=u.id and u.id=? where u.id=?";
+        return Db.find(sql1, userId, userId);
 
     }
 

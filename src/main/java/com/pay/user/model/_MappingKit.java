@@ -21,6 +21,7 @@ public class _MappingKit {
 		arp.addMapping("company", "id", Company.class);
 		arp.addMapping("contract", "id", Contract.class);
 		arp.addMapping("cooperation", "id", Cooperation.class);
+		arp.addMapping("department", "id", Department.class);
 		arp.addMapping("education", "id", Education.class);
 		arp.addMapping("equipment", "id", Equipment.class);
 		arp.addMapping("experience", "id", Experience.class);

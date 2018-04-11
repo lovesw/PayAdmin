@@ -1,4 +1,4 @@
-package com.pay.sys.service;
+package com.pay.admin.service;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.SecureUtil;
@@ -22,8 +22,9 @@ public class UserService {
      * @return 员工信息列表
      */
     public List<Record> listService() {
+        String sql1 = "select id,name,(select name from department as d where d.id=department) as department,(select name from department as d where d.id=position) as position,uf.phone,mark,s_date,z_date from user ,user_info as uf where uf.user_id=user.id";
         String sql = "select id,name,department,position,uf.phone,mark,s_date,z_date from user ,user_info as uf where uf.user_id=user.id";
-        return Db.find(sql);
+        return Db.find(sql1);
     }
 
     /**

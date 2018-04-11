@@ -41,6 +41,9 @@ public class AdminRoutes extends Routes {
         add("/admin/pro", ProportionAction.class);
         //主题月盈利
         add("/admin/tu", TurnoverAction.class);
-
+        //薪水管理
+        add("/admin/s", SalaryAction.class);
+        //部门职称管理
+        add("/admin/d", DepartmentAction.class);
     }
 }

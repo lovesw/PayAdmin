@@ -9,7 +9,7 @@ import com.pay.data.interceptors.Delete;
 import com.pay.data.interceptors.Get;
 import com.pay.data.interceptors.Post;
 import com.pay.data.interceptors.Put;
-import com.pay.sys.service.UserService;
+import com.pay.admin.service.UserService;
 import com.pay.user.model.User;
 
 import java.util.Enumeration;

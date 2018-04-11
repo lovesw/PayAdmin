@@ -27,22 +27,22 @@ public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implement
 		return getStr("name");
 	}
 
-	public M setDepartment(java.lang.String department) {
+	public M setDepartment(java.lang.Long department) {
 		set("department", department);
 		return (M)this;
 	}
 	
-	public java.lang.String getDepartment() {
-		return getStr("department");
+	public java.lang.Long getDepartment() {
+		return getLong("department");
 	}
 
-	public M setPosition(java.lang.String position) {
+	public M setPosition(java.lang.Long position) {
 		set("position", position);
 		return (M)this;
 	}
 	
-	public java.lang.String getPosition() {
-		return getStr("position");
+	public java.lang.Long getPosition() {
+		return getLong("position");
 	}
 
 	public M setGrade(java.lang.String grade) {

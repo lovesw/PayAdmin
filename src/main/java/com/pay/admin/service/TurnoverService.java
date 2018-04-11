@@ -1,20 +1,21 @@
 package com.pay.admin.service;
 
 import cn.hutool.core.date.DateUtil;
+import com.jfinal.aop.Before;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
+import com.jfinal.plugin.activerecord.tx.Tx;
 import com.pay.data.entity.ScaleEntity;
 import com.pay.data.entity.TurnoverEntity;
 import com.pay.data.utils.CommonUtils;
 import com.pay.data.utils.FieldUtils;
+import com.pay.user.bean.BaseScale;
 import com.pay.user.model.Cooperation;
 import com.pay.user.model.Fillturnover;
 import com.pay.user.model.Scale;
 import com.pay.user.model.Turnover;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * @createTime: 2018/4/10
@@ -48,6 +49,7 @@ public class TurnoverService {
      * @param cooperationId 合作商家Id
      * @return 返回是否添加成
      */
+    @Before(Tx.class)
     public boolean addService(List<TurnoverEntity> list, Long cooperationId) {
         Date date = CommonUtils.getLastMonth();
         //判断当前月是否已经添加了
@@ -96,6 +98,7 @@ public class TurnoverService {
      * @param money         市场总金额
      * @return 是否添加成功
      */
+    @Before(Tx.class)
     public boolean sAddService(List<ScaleEntity> list, Long cooperationId, Double money) {
         Date date = CommonUtils.getLastMonth();
         //判断当前月是否已经添加了
@@ -103,6 +106,8 @@ public class TurnoverService {
             return false;
         }
         List<Scale> scaleList = new ArrayList<>(list.size());
+        //查看是否有相同的人
+        Set<String> stringSet = new HashSet<>(list.size());
         //临时变量，用来计算最终的比例是否是%
         Double sum = 0.0;
         for (ScaleEntity scaleEntity : list) {
@@ -114,6 +119,9 @@ public class TurnoverService {
             //设置分配比例
             scale.setRatio(scaleEntity.getNum());
             scale.setUserId(scaleEntity.getId());
+            scale.setDate(new Date());
+            //将用户Id添加到stringList中
+            stringSet.add(scaleEntity.getId());
             sum += scaleEntity.getNum();
             scaleList.add(scale);
         }
@@ -121,6 +129,11 @@ public class TurnoverService {
         if (sum != 100) {
             return false;
         }
+        //长度不相同，说明有重复的人，这样就不通过
+        if (list.size() != stringSet.size()) {
+            return false;
+        }
+
         //标记上个月已经添加了
         Fillturnover fillturnover = getFillturnover(cooperationId, date);
         return fillturnover.save() && Db.batchSave(scaleList, scaleList.size()).length > 0;
@@ -165,8 +178,7 @@ public class TurnoverService {
             if (cooperation.getSeparate()) {
                 return null;
             }
-
-            String sql = "select scale.id, num,month,pay,u.id,u.name from scale,user as u where u.id=scale.user_id and cooperation_id=? and date_format(date,'%y-%d')=date_format(?,'%y-%d') ";
+            String sql = "select scale.id, ratio,month,pay,u.id as uid,u.name from scale,user as u where u.id=scale.user_id and cooperation_id=? and date_format(month,'%y-%d')=date_format(?,'%y-%d') ";
             return Db.find(sql, cooperationId, CommonUtils.getLastMonth());
         }
 
@@ -176,14 +188,22 @@ public class TurnoverService {
     /**
      * 修改比例分成信息
      *
-     * @param id  比例分成的唯一Id
-     * @param num 分成比例
+     * @param recordList 批量修改对象
      * @return 返回是否修改成功
      */
-    public boolean sUpdateService(Long id, Double num) {
-        String sql = "update scale set ratio=? where id=? ";
-        return Db.update(sql, num, id) > 0;
+    @Before(Tx.class)
+    public boolean sUpdateService(List<Record> recordList) {
+        System.out.println(recordList);
+        return Db.batchUpdate("scale", "id", recordList, recordList.size()).length > 0;
+    }
 
-
+    /**
+     * @param cooperationId 合作市场的Id
+     * @param num           分成总额
+     * @return 是否修改成功
+     */
+    public boolean saUpdateService(Long cooperationId, Double num) {
+        String sql = "update scale set pay=? where cooperation_id=? and month=? ";
+        return Db.update(sql, num, cooperationId, CommonUtils.getLastMonth()) > 0;
     }
 }
