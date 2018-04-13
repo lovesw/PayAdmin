@@ -7,12 +7,11 @@ import com.jfinal.upload.UploadFile;
 import com.pay.data.controller.BaseController;
 import com.pay.data.interceptors.Get;
 import com.pay.data.interceptors.Post;
-import com.pay.data.utils.FileImageUtils;
 import com.pay.data.utils.FieldUtils;
+import com.pay.data.utils.FileImageUtils;
 import com.pay.user.model.User;
 import com.pay.user.service.UserInfoService;
 
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -90,12 +89,7 @@ public class UserInfoAction extends BaseController {
      */
     @Before(Post.class)
     public void userInfoUpdate() {
-        Record record = new Record();
-        Enumeration<String> enumeration = getParaNames();
-        while (enumeration.hasMoreElements()) {
-            String params = enumeration.nextElement();
-            record.set(params, getPara(params));
-        }
+        Record record = getRecordPara();
         String userId = getUserId();
         success(userInfoService.userInfoUpdateService(userId, record));
     }

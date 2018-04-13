@@ -6,42 +6,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2b4c74e-688f-4309-8ebb-a503bdf2e89e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pay/admin/action/DepartmentAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pay/admin/action/SalaryAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pay/admin/service/DepartmentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pay/data/validator/DepartmentValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pay/admin/service/SalaryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pay/data/validator/UserValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/admin/action/DepartmentAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/admin/action/DepartmentAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/admin/action/ProportionAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/admin/action/ProportionAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/admin/action/SalaryAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/admin/action/SalaryAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/admin/action/TurnoverAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/admin/action/TurnoverAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/admin/action/UserAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/admin/action/UserAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/admin/config/AdminRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/admin/config/AdminRoutes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/admin/service/TurnoverService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/admin/service/TurnoverService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/sys/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/admin/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/user/bean/BaseUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/user/bean/BaseUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/admin/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/admin/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/data/config/PayAdminConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/data/config/PayAdminConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/data/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/data/controller/BaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/data/interceptors/ExceptionInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/data/interceptors/ExceptionInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/data/utils/CommonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/data/utils/CommonUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/data/validator/BaseValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/data/validator/BaseValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/data/validator/DepartmentValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/data/validator/DepartmentValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/data/validator/LoginValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/data/validator/LoginValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/sys/action/PermissionAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/sys/action/PermissionAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/user/action/UserInfoAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/user/action/UserInfoAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/user/action/UserNotPermissionAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/user/action/UserNotPermissionAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/user/bean/BaseFillturnover.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/user/bean/BaseScale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/user/bean/BaseScale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/user/model/Fillturnover.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/user/model/_MappingKit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/user/model/_MappingKit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pay/user/service/UserInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pay/user/service/UserInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/upload/小编力荐软件.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/upload/小编力荐软件1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/upload/小编力荐软件2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/upload/新品榜单精选.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/upload/新品榜单精选1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/upload/新品榜单精选2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/upload/新品榜单精选3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/upload/新品榜单精选4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/upload/新品榜单精选5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/upload/新品榜单精选6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/upload/热门软件精选.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/upload/热门软件精选1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/upload/热门软件精选2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/upload/热门软件精选3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/upload/组 3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pay/admin/action/ProportionAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/action/ProportionAction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/pay/admin/action/TurnoverAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/action/TurnoverAction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/pay/admin/action/UserAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/action/UserAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pay/admin/config/AdminRoutes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/config/AdminRoutes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/pay/admin/service/TurnoverService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pay/admin/service/TurnoverService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pay/sys/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pay/user/bean/BaseUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pay/user/bean/BaseUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pay/data/config/PayAdminConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pay/data/config/PayAdminConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pay/data/controller/BaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pay/data/controller/BaseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pay/data/interceptors/ExceptionInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pay/data/interceptors/ExceptionInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pay/data/utils/CommonUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pay/data/utils/CommonUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pay/data/validator/BaseValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pay/data/validator/BaseValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pay/data/validator/LoginValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pay/data/validator/LoginValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pay/sys/action/PermissionAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pay/sys/action/PermissionAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pay/user/action/UserInfoAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pay/user/action/UserInfoAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pay/user/action/UserNotPermissionAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pay/user/action/UserNotPermissionAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pay/user/bean/BaseFillturnover.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pay/user/bean/BaseScale.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pay/user/bean/BaseScale.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pay/user/model/Fillturnover.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/pay/user/model/_MappingKit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pay/user/model/_MappingKit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pay/user/service/UserInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pay/user/service/UserInfoService.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -67,50 +72,93 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserInfoService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/service/UserInfoService.java">
+      <file leaf-file-name="SalaryAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/SalaryAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="755">
-              <caret line="74" column="6" lean-forward="true" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DepartmentAction.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/DepartmentAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="47" column="22" lean-forward="true" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+            <state relative-caret-position="414">
+              <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1439#1440#0" expanded="true" />
+                <element signature="e#1492#1493#0" expanded="true" />
+                <element signature="e#1553#1554#0" expanded="true" />
+                <element signature="e#1599#1600#0" expanded="true" />
+                <element signature="e#1654#1655#0" expanded="true" />
+                <element signature="e#1722#1723#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/UserAction.java">
+      <file leaf-file-name="SalaryService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/service/SalaryService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
+            <state relative-caret-position="729">
+              <caret line="131" column="47" lean-forward="true" selection-start-line="131" selection-start-column="47" selection-end-line="131" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2574#2575#0" expanded="true" />
+                <element signature="e#2630#2631#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DepartmentService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/service/DepartmentService.java">
+      <file leaf-file-name="CommonUtils.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/data/utils/CommonUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="43" column="23" lean-forward="true" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+            <state relative-caret-position="210">
+              <caret line="120" column="18" selection-start-line="120" selection-start-column="18" selection-end-line="120" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JfinalDemoGenerator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/JfinalDemoGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="38" column="47" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NumberUtil.java" pinned="false" current-in-tab="false">
+        <entry file="jar://D:/Programs/Maven/Repository/cn/hutool/hutool-all/4.0.7/hutool-all-4.0.7-sources.jar!/cn/hutool/core/util/NumberUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="338">
+              <caret line="863" column="33" selection-start-line="863" selection-start-column="25" selection-end-line="863" selection-end-column="33" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#893#894#0" expanded="true" />
-                <element signature="e#965#966#0" expanded="true" />
-                <element signature="e#1051#1052#0" expanded="true" />
-                <element signature="e#1103#1104#0" expanded="true" />
+                <element signature="e#16230#16231#0" expanded="true" />
+                <element signature="e#16281#16282#0" expanded="true" />
+                <element signature="e#16502#16503#0" expanded="true" />
+                <element signature="e#16542#16543#0" expanded="true" />
+                <element signature="e#19506#19507#0" expanded="true" />
+                <element signature="e#19560#19561#0" expanded="true" />
+                <element signature="e#20252#20253#0" expanded="true" />
+                <element signature="e#20306#20307#0" expanded="true" />
+                <element signature="e#20456#20457#0" expanded="true" />
+                <element signature="e#20498#20499#0" expanded="true" />
+                <element signature="e#38755#38756#0" expanded="true" />
+                <element signature="e#38791#38792#0" expanded="true" />
+                <element signature="e#39996#39997#0" expanded="true" />
+                <element signature="e#40042#40043#0" expanded="true" />
+                <element signature="e#40255#40256#0" expanded="true" />
+                <element signature="e#40301#40302#0" expanded="true" />
+                <element signature="e#40501#40502#0" expanded="true" />
+                <element signature="e#40548#40549#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MathUtil.java" pinned="false" current-in-tab="false">
+        <entry file="jar://D:/Programs/Maven/Repository/cn/hutool/hutool-all/4.0.7/hutool-all-4.0.7-sources.jar!/cn/hutool/core/math/MathUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1133">
+              <caret line="75" column="33" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
+              <folding>
+                <element signature="e#1559#1560#0" expanded="true" />
+                <element signature="e#1605#1606#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -143,6 +191,7 @@
       <find>getAttr(&quot;userId&quot;)</find>
       <find>惩罚</find>
       <find>/s</find>
+      <find>Record</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -180,13 +229,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/pay/data/utils/ResultUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pay/data/utils/StringUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/ehcache.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pay/data/interceptors/ExceptionInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/404.html" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/action/InvoiceAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/data/utils/FileImageUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/service/InvoiceService.java" />
@@ -195,22 +237,17 @@
         <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/service/CooperationService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/action/Proportion.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/data/entity/MakeDesign.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/action/ProportionAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/service/ProportionService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pay/data/config/PayAdminConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/sys/service/PermissionService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/user/config/UserRoutes.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/user/service/LoginService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/user/action/LoginAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pay/sys/action/PermissionAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/service/ThemeAdminService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/action/ThemeAdminAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/data/entity/ThemeEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pay/user/action/UserNotPermissionAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/user/service/UserNotPermissionService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/user/config/LoginRoutes.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/data/utils/FieldUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pay/data/utils/CommonUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/data/entity/TurnoverEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/action/CooperationAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/action/ScaleAdmin.java" />
@@ -219,18 +256,30 @@
         <option value="$PROJECT_DIR$/src/main/java/com/pay/user/action/ThemeAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/user/service/ThemeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/data/entity/ScaleEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/action/SalaryAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/action/UserAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/service/TurnoverService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/action/TurnoverAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/action/DepartmentAdmin.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/action/DepartmentAdminAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pay/data/validator/DepartmentValidator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/config/AdminRoutes.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/user/service/UserInfoService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/service/DepartmentService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/action/ProportionAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pay/sys/action/PermissionAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pay/data/validator/BaseValidator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pay/data/validator/LoginValidator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pay/data/validator/DepartmentValidator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pay/data/validator/UserValidator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pay/data/interceptors/ExceptionInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/action/TurnoverAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pay/data/config/PayAdminConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/service/TurnoverService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/action/SalaryAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pay/user/action/UserInfoAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pay/data/controller/BaseController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pay/user/action/UserNotPermissionAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/action/DepartmentAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/action/UserAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pay/admin/service/SalaryService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pay/data/utils/CommonUtils.java" />
       </list>
     </option>
   </component>
@@ -259,8 +308,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="1887" />
+    <option name="y" value="23" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -334,105 +383,6 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="pay" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="PayAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PayAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pay" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PayAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PayAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pay" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="action" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PayAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PayAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pay" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PayAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PayAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pay" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PayAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PayAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pay" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PayAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PayAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pay" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PayAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PayAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pay" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="action" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PayAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PayAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="pay" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PayAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PayAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PayAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PayAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -454,11 +404,10 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Maven\PayAdmin\src\main\resources" />
-      <recent name="E:\Maven\PayAdmin\src\main\java\com\pay\sys" />
-      <recent name="E:\Maven\JFinalDemo\src\main\java\com\claw\user" />
-      <recent name="E:\Maven\JFinalDemo\src\main\resources" />
+      <recent name="E:\Maven\PayAdmin\src\main\webapp" />
+      <recent name="E:\Maven\JFinalDemo\src\main\webapp" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.pay.data.utils" />
@@ -466,10 +415,11 @@
       <recent name="com.claw.data.utils" />
       <recent name="com.claw.user.action" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Maven\PayAdmin\src\main\resources" />
-      <recent name="E:\Maven\PayAdmin\src\main\webapp" />
-      <recent name="E:\Maven\JFinalDemo\src\main\webapp" />
+      <recent name="E:\Maven\PayAdmin\src\main\java\com\pay\sys" />
+      <recent name="E:\Maven\JFinalDemo\src\main\java\com\claw\user" />
+      <recent name="E:\Maven\JFinalDemo\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -484,7 +434,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.JfinalDemoGenerator">
+  <component name="RunManager" selected="Application.PayApplication">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -499,6 +449,17 @@
       <option name="MAIN_CLASS_NAME" value="PayApplication" />
       <module name="PayAdmin" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="SalaryService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pay.admin.service.SalaryService" />
+      <module name="PayAdmin" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pay.admin.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -567,11 +528,13 @@
     <list>
       <item itemvalue="Application.PayApplication" />
       <item itemvalue="Application.JfinalDemoGenerator" />
+      <item itemvalue="Application.SalaryService" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.PayApplication" />
         <item itemvalue="Application.JfinalDemoGenerator" />
+        <item itemvalue="Application.SalaryService" />
       </list>
     </recent_temporary>
   </component>
@@ -597,7 +560,10 @@
       <workItem from="1523235429852" duration="22488000" />
       <workItem from="1523321606362" duration="25177000" />
       <workItem from="1523408335640" duration="18917000" />
-      <workItem from="1523439414303" duration="1810000" />
+      <workItem from="1523439414303" duration="1990000" />
+      <workItem from="1523495516521" duration="1046000" />
+      <workItem from="1523498843695" duration="22008000" />
+      <workItem from="1523582614396" duration="19474000" />
     </task>
     <task id="LOCAL-00001" summary="1:删除了webapp下upload的下的图片文件">
       <created>1522218159128</created>
@@ -655,11 +621,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523353415561</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="完成了工资管理">
+      <created>1523441363928</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1523441363928</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="218038000" />
+    <option name="totallyTimeSpent" value="260746000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -671,39 +644,39 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.2867804" side_tool="true" weight="0.4002181" />
-      <window_info anchor="right" id="Maven Projects" order="6" weight="0.21268657" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="1" />
-      <window_info anchor="right" id="Database" order="8" weight="0.09594883" />
-      <window_info anchor="right" id="Structure" order="9" side_tool="true" visible="true" weight="0.09701493" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4880435" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.33151582" />
       <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.3672708" weight="0.49073064" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.302072" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.10660981" side_tool="true" weight="0.5016358" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.21268657" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.46481878" weight="0.49182117" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.71321964" visible="true" weight="0.49182117" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8933902" visible="true" weight="0.48527807" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.33369684" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17270789" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="1" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15298508" />
       <window_info id="Web" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.3217012" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" id="Database" order="9" weight="0.09594883" />
+      <window_info anchor="right" id="Structure" order="6" side_tool="true" visible="true" weight="0.17004265" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4880435" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.3217012" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -750,7 +723,8 @@
     <MESSAGE value="主题优化，添加了主题所属公司，以及优化了营业额的查看" />
     <MESSAGE value="优化合作市场与公司共有权限获取，然后完成主题盈利功能" />
     <MESSAGE value="完成了主题分成填写，并实现了包括主题分成查看，修改，批量添加，主题分成添加，查看，修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成了主题分成填写，并实现了包括主题分成查看，修改，批量添加，主题分成添加，查看，修改" />
+    <MESSAGE value="完成了工资管理" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成了工资管理" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -758,385 +732,425 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/JfinalDemoGenerator.java">
+    <entry file="jar://D:/Programs/Java/jdk1.8.0_60/src.zip!/java/sql/SQLIntegrityConstraintViolationException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="38" column="47" lean-forward="true" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/bean/BaseProportion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/bean/BaseArchives.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/service/LoginService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="56" column="1" lean-forward="true" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/sys/config/SysRoutes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/data/entity/ThemeEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/config/ParaUserRoutes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/service/UserNotPermissionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/action/UserNotPermissionAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="88" column="41" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/config/UserRoutes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/data/config/PayAdminConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-72">
-          <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/data/utils/FieldUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="28" column="45" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/service/ThemeAdminService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="25" column="320" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="320" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/data/utils/CommonUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#336#337#0" expanded="true" />
-            <element signature="e#398#399#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/data/entity/MakeDesign.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/config/LoginRoutes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/PayApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#183#184#0" expanded="true" />
-            <element signature="e#241#242#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/ProportionAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="41" column="40" lean-forward="true" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/service/ProportionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/InvoiceAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="81" column="35" selection-start-line="81" selection-start-column="35" selection-end-line="81" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/ArchivesAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/CooperationAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="56" column="34" lean-forward="true" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/ScaleAdmin.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/service/UserPermissionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/action/ThemeAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="65" column="37" selection-start-line="65" selection-start-column="37" selection-end-line="65" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/action/UserPermissionAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/service/ThemeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1617">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/PunishAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/ThemeAdminAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="34" column="43" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Programs/Java/jdk1.8.0_60/src.zip!/java/util/function/Consumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/SalaryAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="60" column="21" lean-forward="true" selection-start-line="50" selection-start-column="7" selection-end-line="60" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/data/entity/ScaleEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/sys/action/PermissionAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/sys/service/PermissionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2322">
-          <caret line="138" column="48" selection-start-line="138" selection-start-column="29" selection-end-line="138" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/data/entity/TurnoverEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Programs/Maven/Repository/com/jfinal/jfinal-java8/3.3/jfinal-java8-3.3-sources.jar!/com/jfinal/plugin/activerecord/DbPro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="1210" column="17" selection-start-line="1210" selection-start-column="17" selection-end-line="1210" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Programs/Maven/Repository/com/jfinal/jfinal-java8/3.3/jfinal-java8-3.3-sources.jar!/com/jfinal/plugin/activerecord/Db.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="639" column="28" lean-forward="true" selection-start-line="639" selection-start-column="28" selection-end-line="639" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/service/TurnoverService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3222">
-          <caret line="194" column="27" selection-start-line="194" selection-start-column="27" selection-end-line="194" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/TurnoverAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/data/validator/DepartmentValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/action/LoginAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/data/validator/LoginValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/action/UserInfoAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="75" column="42" lean-forward="true" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/config/AdminRoutes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
+        <state relative-caret-position="213">
+          <caret line="37" column="69" selection-start-line="37" selection-start-column="69" selection-end-line="37" selection-end-column="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="24" column="162" selection-start-line="24" selection-start-column="162" selection-end-line="24" selection-end-column="162" />
+        <state relative-caret-position="249">
+          <caret line="38" column="23" lean-forward="true" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/JfinalDemoGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/bean/BaseUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="38" column="47" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+        <state relative-caret-position="-54">
+          <caret line="72" column="5" lean-forward="true" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/service/UserInfoService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/data/validator/BaseValidator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="755">
-          <caret line="74" column="6" lean-forward="true" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
+        <state relative-caret-position="162">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/UserAction.java">
+    <entry file="jar://D:/Programs/Maven/Repository/com/jfinal/jfinal-java8/3.3/jfinal-java8-3.3-sources.jar!/com/jfinal/validate/Validator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
+        <state relative-caret-position="213">
+          <caret line="310" column="17" selection-start-line="310" selection-start-column="17" selection-end-line="310" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="52" lean-forward="true" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/data/validator/UserValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/data/validator/LoginValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/data/validator/DepartmentValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Programs/Maven/Repository/com/jfinal/jfinal-java8/3.3/jfinal-java8-3.3-sources.jar!/com/jfinal/plugin/activerecord/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="457" column="19" lean-forward="true" selection-start-line="457" selection-start-column="19" selection-end-line="457" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/data/interceptors/ExceptionInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="33" column="79" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Programs/Maven/Repository/com/jfinal/jfinal-java8/3.3/jfinal-java8-3.3-sources.jar!/com/jfinal/aop/Enhancer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Programs/Maven/Repository/com/jfinal/jfinal-java8/3.3/jfinal-java8-3.3-sources.jar!/com/jfinal/aop/Duang.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-720">
+          <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/config/AdminRoutes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/sys/service/PermissionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="177" lean-forward="true" selection-start-line="177" selection-end-line="177" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/sys/action/PermissionAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3600">
+          <caret line="222" column="22" selection-start-line="222" selection-start-column="22" selection-end-line="222" selection-end-column="22" />
+          <folding>
+            <element signature="e#3806#3807#0" expanded="true" />
+            <element signature="e#3872#3873#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Programs/Maven/Repository/com/jfinal/jfinal-java8/3.3/jfinal-java8-3.3-sources.jar!/com/jfinal/render/ViewType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/data/config/PayAdminConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1620">
+          <caret line="106" column="16" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/service/TurnoverService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="206" column="6" selection-start-line="206" selection-start-column="6" selection-end-line="206" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/bean/BaseDepartment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#176#218#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Programs/Java/jdk1.8.0_60/src.zip!/java/util/Enumeration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="60" column="17" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/service/DepartmentService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="43" column="23" lean-forward="true" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+        <state relative-caret-position="261">
+          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#893#894#0" expanded="true" />
-            <element signature="e#965#966#0" expanded="true" />
-            <element signature="e#1051#1052#0" expanded="true" />
-            <element signature="e#1103#1104#0" expanded="true" />
+            <element signature="e#953#954#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Programs/Maven/Repository/com/jfinal/jfinal-java8/3.3/jfinal-java8-3.3-sources.jar!/com/jfinal/plugin/activerecord/Record.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="31" column="39" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/action/EducationAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="33" column="6" lean-forward="true" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/action/ExperienceAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/action/ImageAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/action/LoginAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/action/ThemeAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="35" column="15" lean-forward="true" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/data/controller/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="36" column="32" lean-forward="true" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/action/UserInfoAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/action/UserNotPermissionAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/user/action/UserPermissionAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/ArchivesAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="21" column="3" lean-forward="true" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/CompanyAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/ContractAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/CooperationAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="63" column="7" lean-forward="true" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/DepartmentAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="47" column="22" lean-forward="true" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+        <state relative-caret-position="189">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/EquipmentAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/InvoiceAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/ProjectAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/ProportionAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/PunishAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/ThemeAdminAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/TurnoverAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="159" column="29" lean-forward="true" selection-start-line="159" selection-start-column="29" selection-end-line="159" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/UserAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Programs/Maven/Repository/cn/hutool/hutool-all/4.0.7/hutool-all-4.0.7-sources.jar!/cn/hutool/core/math/MathUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1133">
+          <caret line="75" column="33" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
+          <folding>
+            <element signature="e#1559#1560#0" expanded="true" />
+            <element signature="e#1605#1606#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Programs/Maven/Repository/cn/hutool/hutool-all/4.0.7/hutool-all-4.0.7-sources.jar!/cn/hutool/core/util/NumberUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="863" column="33" selection-start-line="863" selection-start-column="25" selection-end-line="863" selection-end-column="33" />
+          <folding>
+            <element signature="e#16230#16231#0" expanded="true" />
+            <element signature="e#16281#16282#0" expanded="true" />
+            <element signature="e#16502#16503#0" expanded="true" />
+            <element signature="e#16542#16543#0" expanded="true" />
+            <element signature="e#19506#19507#0" expanded="true" />
+            <element signature="e#19560#19561#0" expanded="true" />
+            <element signature="e#20252#20253#0" expanded="true" />
+            <element signature="e#20306#20307#0" expanded="true" />
+            <element signature="e#20456#20457#0" expanded="true" />
+            <element signature="e#20498#20499#0" expanded="true" />
+            <element signature="e#38755#38756#0" expanded="true" />
+            <element signature="e#38791#38792#0" expanded="true" />
+            <element signature="e#39996#39997#0" expanded="true" />
+            <element signature="e#40042#40043#0" expanded="true" />
+            <element signature="e#40255#40256#0" expanded="true" />
+            <element signature="e#40301#40302#0" expanded="true" />
+            <element signature="e#40501#40502#0" expanded="true" />
+            <element signature="e#40548#40549#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/JfinalDemoGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="38" column="47" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/service/SalaryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="131" column="47" lean-forward="true" selection-start-line="131" selection-start-column="47" selection-end-line="131" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2574#2575#0" expanded="true" />
+            <element signature="e#2630#2631#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/admin/action/SalaryAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1439#1440#0" expanded="true" />
+            <element signature="e#1492#1493#0" expanded="true" />
+            <element signature="e#1553#1554#0" expanded="true" />
+            <element signature="e#1599#1600#0" expanded="true" />
+            <element signature="e#1654#1655#0" expanded="true" />
+            <element signature="e#1722#1723#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pay/data/utils/CommonUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="120" column="18" selection-start-line="120" selection-start-column="18" selection-end-line="120" selection-end-column="18" />
         </state>
       </provider>
     </entry>

@@ -1,9 +1,15 @@
 package com.pay.data.utils;
 
+import cn.hutool.core.convert.Convert;
 import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.util.NumberUtil;
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSONArray;
+import cn.hutool.json.JSONUtil;
+import com.jfinal.plugin.activerecord.Record;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @createTime: 2018/4/4
@@ -44,5 +50,91 @@ public class CommonUtils {
             }
         }
         return true;
+    }
+
+    /**
+     * @param str Json格式的字符串
+     * @param t   T class类型
+     * @param <T> 泛型T
+     * @return json实体解析集合
+     */
+    public static <T> List<T> strJsonToBean(String str, Class<T> t) {
+        JSONArray jsonArray = JSONUtil.parseArray(str);
+        //将jsonArray转为TurnoverEntity集合
+        return JSONUtil.toList(jsonArray, t);
+    }
+
+
+    /**
+     * 工资指定月没有填写的处理，将没有填写基本工资的人处理为0
+     *
+     * @param list 工资列表
+     * @return 处理好的工资列表
+     */
+    public static List<Record> salaryUtil(List<Record> list) {
+        list.forEach(x -> {
+            x.set("tax", 0);
+            String[] s = x.getColumnNames();
+            for (String s1 : s) {
+                if (x.get(s1) == null) {
+                    x.set(s1, 0);
+                }
+            }
+        });
+        return list;
+    }
+
+    /**
+     * 税计算处理，与实际发放的工资处理
+     *
+     * @param list 工资集合
+     * @return 计算好的工资集合
+     */
+    public static List<Record> taxUtil(List<Record> list) {
+        for (Record record : list) {
+            if (Convert.toInt(record.get("id")) != 0) {
+                //申报工资
+                double submit_money = Convert.toDouble(record.get("submit_money"));
+                //扣除社保的工资
+                double x = submit_money - Convert.toDouble(record.get("social"));
+                //税收
+                double tax = getTax(x);
+                //设置税收
+                record.set("tax", getTax(x));
+                //实际发放的工资
+                Double actual_money = Convert.toDouble(record.get("actual_money"));
+                //设置实际发送的工资，减去税收
+                record.set("actual_money", actual_money - tax);
+            }
+
+        }
+        return list;
+    }
+
+    /**
+     * 计算税率的
+     *
+     * @param money 计算工资
+     * @return 返回税
+     */
+    private static Double getTax(Double money) {
+        double tax;
+        if (money <= 3500)
+            tax = 0;
+        else if (money <= 5000)
+            tax = (money - 3500) * 0.03f;
+        else if (money <= 8000)//假设工资7000块，计算时需要注意5000以下的部分按0.03计算，5001~8000部分按0.1计算，所以计算表达式如下
+            tax = (money - 5000) * 0.1f + (5000 - 3500) * 0.03f;
+        else if (money <= 12500)
+            tax = (money - 8000) * 0.2f + (8000 - 5000) * 0.1f + (5000 - 3500) * 0.03f;
+        else if (money <= 38500)
+            tax = (money - 12500) * 0.25f + (12500 - 8000) * 0.2f + (8000 - 5000) * 0.1f + (5000 - 3500) * 0.03f;
+        else if (money <= 58500)
+            tax = (money - 38500) * 0.3f + (38500 - 12500) * 0.25f + (12500 - 8000) * 0.2f + (8000 - 5000) * 0.1f + (5000 - 3500) * 0.03f;
+        else if (money <= 83500)
+            tax = (money - 58500) * 0.35f + (58500 - 38500) * 0.3f + (38500 - 12500) * 0.25f + (12500 - 8000) * 0.2f + (8000 - 5000) * 0.1f + (5000 - 3500) * 0.03f;
+        else
+            tax = (money - 83500) * 0.45f + (83500 - 58500) * 0.35f + (58500 - 38500) * 0.3f + (38500 - 12500) * 0.25f + (12500 - 8000) * 0.2f + (8000 - 5000) * 0.1f + (5000 - 3500) * 0.03f;
+        return Double.valueOf(NumberUtil.roundStr(tax, 2));
     }
 }

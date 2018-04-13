@@ -3,6 +3,8 @@ package com.pay.data.interceptors;
 
 import com.jfinal.aop.Interceptor;
 import com.jfinal.aop.Invocation;
+import com.jfinal.plugin.activerecord.ActiveRecordException;
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import com.pay.data.utils.FieldUtils;
 import com.pay.data.utils.ResultUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -20,6 +22,9 @@ public class ExceptionInterceptor implements Interceptor {
         inv.getController().getResponse().setHeader("Access-Control-Expose-Headers", FieldUtils.AUTHORIZATION);
         try {
             inv.invoke();
+        } catch (ActiveRecordException e) {
+            e.printStackTrace();
+            inv.getController().renderJson(ResultUtils.error("操作失败,请联系管理员"));
         } catch (cn.hutool.core.date.DateException e) {
             //用于自定日期查询发票的时候，可能会出现时间加载不正确的情况
             e.printStackTrace();

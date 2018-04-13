@@ -2,13 +2,12 @@ package com.pay.admin.action;
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
-import cn.hutool.json.JSONArray;
-import cn.hutool.json.JSONUtil;
 import com.jfinal.aop.Before;
 import com.pay.admin.service.ProportionService;
 import com.pay.data.controller.BaseController;
 import com.pay.data.entity.MakeDesign;
 import com.pay.data.interceptors.Put;
+import com.pay.data.utils.CommonUtils;
 
 import java.util.Date;
 import java.util.List;
@@ -46,10 +45,8 @@ public class ProportionAction extends BaseController {
      * 添加每个月的分成比例
      */
     public void add(String str) {
-        //将传入的数组转为jsonArray
-        JSONArray jsonArray = JSONUtil.parseArray(str);
-        //将jsonArray转为MakeDesign集合
-        List<MakeDesign> list = JSONUtil.toList(jsonArray, MakeDesign.class);
+        //将比例分成的json格式的字符串转为MakeDesign集合
+        List<MakeDesign> list = CommonUtils.strJsonToBean(str, MakeDesign.class);
         boolean bool = proportionService.addService(list);
         result(bool, "添加失败");
     }

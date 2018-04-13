@@ -18,15 +18,4 @@ public class LoginValidator extends BaseValidator {
         validateNumberString("username", "nameMsg", "用户名格式不正确");
         validateRequiredString("password", "passwordMsg", "请输入密码");
     }
-
-    @Override
-    protected void handleError(Controller c) {
-        Map<String, Object> mapError = new HashMap<>(2);
-        Enumeration<String> enumeration = c.getAttrNames();
-        while (enumeration.hasMoreElements()) {
-            String key = enumeration.nextElement();
-            mapError.put(key, c.getAttr(key));
-        }
-        c.renderJson(ResultUtils.error(-1, "校验失败", mapError));
-    }
 }

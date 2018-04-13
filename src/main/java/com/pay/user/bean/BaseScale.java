@@ -72,4 +72,13 @@ public abstract class BaseScale<M extends BaseScale<M>> extends Model<M> impleme
 		return get("date");
 	}
 
+	public M setCompanyId(java.lang.Long companyId) {
+		set("company_id", companyId);
+		return (M)this;
+	}
+	
+	public java.lang.Long getCompanyId() {
+		return getLong("company_id");
+	}
+
 }

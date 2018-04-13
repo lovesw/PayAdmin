@@ -2,18 +2,17 @@ package com.pay.admin.action;
 
 import cn.hutool.core.util.StrUtil;
 import com.jfinal.aop.Before;
+import com.jfinal.aop.Duang;
 import com.jfinal.core.paragetter.Para;
 import com.jfinal.plugin.activerecord.Record;
+import com.pay.admin.service.UserService;
 import com.pay.data.controller.BaseController;
 import com.pay.data.interceptors.Delete;
 import com.pay.data.interceptors.Get;
 import com.pay.data.interceptors.Post;
 import com.pay.data.interceptors.Put;
-import com.pay.admin.service.UserService;
+import com.pay.data.validator.UserValidator;
 import com.pay.user.model.User;
-
-import java.util.Enumeration;
-import java.util.List;
 
 /**
  * @createTime: 2018/3/5
@@ -21,25 +20,26 @@ import java.util.List;
  * @description: 用户管理
  */
 public class UserAction extends BaseController {
-    private final UserService userService = new UserService();
+
+    private final UserService userService = Duang.duang(UserService.class);
 
     /**
      * 全部的用户信息
      */
     @Before(Get.class)
     public void list() {
-        List<Record> list = userService.listService();
-        success(list);
+        success(userService.listService());
     }
 
     /***
      * 添加员工信息
      * @param user 员工信息对象
      */
-    @Before(Post.class)
+    @Before({Post.class, UserValidator.class})
     public void add(@Para("") User user) {
         boolean bool = userService.addService(user);
         result(bool, "添加失败");
+
     }
 
     /***
@@ -83,14 +83,30 @@ public class UserAction extends BaseController {
 
     @Before(Put.class)
     public void update() {
-        Record record = new Record();
-        Enumeration<String> enumeration = getParaNames();
-        while (enumeration.hasMoreElements()) {
-            String column = enumeration.nextElement();
-            record.set(column, getPara(column));
-        }
+        Record record = getRecordPara();
         result(userService.updateService(record), "修改失败");
+
+    }
+//*************************添加用户的所属部门信息与职位信息需要的接口************************************//
+
+    /***
+     * 获取部门信息
+     */
+    @Before(Get.class)
+    public void dList() {
+        success(userService.dListService());
     }
 
+    /***
+     * 获取部门信息
+     */
+    @Before(Get.class)
+    public void pList(Long id) {
+        if (id == null) {
+            error("部门信息Id不正确");
+        } else {
+            success(userService.pListService(id));
+        }
+    }
 
 }

@@ -1,8 +1,14 @@
 package com.pay.data.validator;
 
 import cn.hutool.core.util.NumberUtil;
+import com.jfinal.core.Controller;
 import com.jfinal.kit.StrKit;
 import com.jfinal.validate.Validator;
+import com.pay.data.utils.ResultUtils;
+
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @createTime: 2018/3/7
@@ -40,4 +46,14 @@ abstract class BaseValidator extends Validator {
         }
     }
 
+    @Override
+    protected void handleError(Controller c) {
+        Map<String, Object> mapError = new HashMap<>(1);
+        Enumeration<String> enumeration = c.getAttrNames();
+        while (enumeration.hasMoreElements()) {
+            String key = enumeration.nextElement();
+            mapError.put(key, c.getAttr(key));
+        }
+        c.renderJson(ResultUtils.error(-1, "请求参数校验失败", mapError));
+    }
 }

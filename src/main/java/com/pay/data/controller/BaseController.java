@@ -1,10 +1,12 @@
 package com.pay.data.controller;
 
 import com.jfinal.core.Controller;
+import com.jfinal.plugin.activerecord.Record;
 import com.pay.data.enums.ExceptionEnum;
 import com.pay.data.utils.ResultUtils;
 
 import java.util.Date;
+import java.util.Enumeration;
 
 /**
  * @createTime: 2018/2/9
@@ -19,6 +21,25 @@ public class BaseController extends Controller {
      */
     protected String getUserId() {
         return getAttr("userId");
+    }
+
+    /**
+     * 获取所有的请求参数
+     *
+     * @return record对象
+     */
+    protected Record getRecordPara() {
+        Record record = new Record();
+        Enumeration<String> enumeration = getParaNames();
+        while (enumeration.hasMoreElements()) {
+            String column = enumeration.nextElement();
+            Object value = getPara(column);
+            if (value == null) {
+                throw new RuntimeException("请求参数不正确");
+            }
+            record.set(column, getPara(column));
+        }
+        return record;
     }
 
 

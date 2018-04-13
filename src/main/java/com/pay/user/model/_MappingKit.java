@@ -25,7 +25,6 @@ public class _MappingKit {
 		arp.addMapping("education", "id", Education.class);
 		arp.addMapping("equipment", "id", Equipment.class);
 		arp.addMapping("experience", "id", Experience.class);
-		arp.addMapping("fillturnover", "id", Fillturnover.class);
 		arp.addMapping("invoice", "id", Invoice.class);
 		arp.addMapping("menu", "id", Menu.class);
 		arp.addMapping("money", "id", Money.class);
@@ -38,9 +37,12 @@ public class _MappingKit {
 		arp.addMapping("role_menu", "mid,role_id", RoleMenu.class);
 		// Composite Primary Key order: permission_id,role_id
 		arp.addMapping("role_permission", "permission_id,role_id", RolePermission.class);
+		arp.addMapping("salary", "id", Salary.class);
+		arp.addMapping("salary_note", "id", SalaryNote.class);
 		arp.addMapping("scale", "id", Scale.class);
 		arp.addMapping("theme", "id", Theme.class);
 		arp.addMapping("turnover", "id", Turnover.class);
+		arp.addMapping("turnover_note", "id", TurnoverNote.class);
 		arp.addMapping("user", "id", User.class);
 		arp.addMapping("user_info", "user_id", UserInfo.class);
 		// Composite Primary Key order: role_id,user_id

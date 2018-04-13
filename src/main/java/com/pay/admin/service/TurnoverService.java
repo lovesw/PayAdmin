@@ -9,11 +9,10 @@ import com.pay.data.entity.ScaleEntity;
 import com.pay.data.entity.TurnoverEntity;
 import com.pay.data.utils.CommonUtils;
 import com.pay.data.utils.FieldUtils;
-import com.pay.user.bean.BaseScale;
 import com.pay.user.model.Cooperation;
-import com.pay.user.model.Fillturnover;
 import com.pay.user.model.Scale;
 import com.pay.user.model.Turnover;
+import com.pay.user.model.TurnoverNote;
 
 import java.util.*;
 
@@ -67,10 +66,10 @@ public class TurnoverService {
             turnoverList.add(turnover);
         }
         //标记上个月已经添加了
-        Fillturnover fillturnover = getFillturnover(cooperationId, date);
+        TurnoverNote turnoverNote = getTurnoverNote(null, cooperationId, date);
 
 
-        return fillturnover.save() && Db.batchSave(turnoverList, turnoverList.size()).length > 0;
+        return turnoverNote.save() && Db.batchSave(turnoverList, turnoverList.size()).length > 0;
 
     }
 
@@ -79,15 +78,16 @@ public class TurnoverService {
      *
      * @param cooperationId 市场
      * @param date          月份
-     * @return Fillturnover 对象
+     * @return TurnoverNote 对象
      */
-    private Fillturnover getFillturnover(Long cooperationId, Date date) {
+    private TurnoverNote getTurnoverNote(Long companyId, Long cooperationId, Date date) {
         //记录date时间是否填写
-        Fillturnover fillturnover = new Fillturnover();
-        fillturnover.setCooperationId(cooperationId);
-        fillturnover.setDate(date);
-        fillturnover.setStatus(true);
-        return fillturnover;
+        TurnoverNote turnoverNote = new TurnoverNote();
+        turnoverNote.setCooperationId(cooperationId);
+        turnoverNote.setCompanyId(companyId);
+        turnoverNote.setDate(date);
+        turnoverNote.setStatus(true);
+        return turnoverNote;
     }
 
     /**
@@ -95,14 +95,15 @@ public class TurnoverService {
      *
      * @param list          比例集合
      * @param cooperationId 合作市场
+     * @param companyId     公司
      * @param money         市场总金额
      * @return 是否添加成功
      */
     @Before(Tx.class)
-    public boolean sAddService(List<ScaleEntity> list, Long cooperationId, Double money) {
+    public boolean sAddService(List<ScaleEntity> list, Long companyId, Long cooperationId, Double money) {
         Date date = CommonUtils.getLastMonth();
         //判断当前月是否已经添加了
-        if (!checkService(cooperationId)) {
+        if (!checksService(companyId, cooperationId)) {
             return false;
         }
         List<Scale> scaleList = new ArrayList<>(list.size());
@@ -113,6 +114,7 @@ public class TurnoverService {
         for (ScaleEntity scaleEntity : list) {
             Scale scale = new Scale();
             scale.setCooperationId(cooperationId);
+            scale.setCompanyId(companyId);
             scale.setMonth(date);
             //设置总金额
             scale.setPay(money);
@@ -135,19 +137,21 @@ public class TurnoverService {
         }
 
         //标记上个月已经添加了
-        Fillturnover fillturnover = getFillturnover(cooperationId, date);
-        return fillturnover.save() && Db.batchSave(scaleList, scaleList.size()).length > 0;
+        TurnoverNote turnoverNote = getTurnoverNote(companyId, cooperationId, date);
+        return turnoverNote.save() && Db.batchSave(scaleList, scaleList.size()).length > 0;
     }
 
     /**
+     * 主题分成检测是否已经填写
+     *
      * @param cooperationId 合作市场的Id
      * @return 返回是否填写过（true:能填写，false：不能填写）
      */
     public boolean checkService(Long cooperationId) {
         Date date = CommonUtils.getLastMonth();
-        String sql = "select * from fillturnover where cooperation_id=? and date=?";
-        List<Fillturnover> fillturnoverList = Fillturnover.dao.find(sql, cooperationId, date);
-        return fillturnoverList.isEmpty();
+        String sql = "select * from turnover_note where cooperation_id=? and date=?";
+        List<TurnoverNote> turnoverNoteList = TurnoverNote.dao.find(sql, cooperationId, date);
+        return turnoverNoteList.isEmpty();
     }
 
     /**
@@ -169,7 +173,7 @@ public class TurnoverService {
      * @param cooperationId 市场Id
      * @return 相关设计人员的信息
      */
-    public List<Record> sListService(Long cooperationId) {
+    public List<Record> sListService(Long companyId, Long cooperationId) {
         Cooperation cooperation = Cooperation.dao.findById(cooperationId);
         if (cooperation == null) {
             return null;
@@ -177,9 +181,10 @@ public class TurnoverService {
             //如果是按照主题分成就直接返回，不做查询
             if (cooperation.getSeparate()) {
                 return null;
+            } else {
+                String sql = "select scale.id, ratio,month,pay,u.id as uid,u.name from scale,user as u where u.id=scale.user_id and company_id=? and cooperation_id=? and date_format(month,'%y-%d')=date_format(?,'%y-%d') ";
+                return Db.find(sql, companyId, cooperationId, CommonUtils.getLastMonth());
             }
-            String sql = "select scale.id, ratio,month,pay,u.id as uid,u.name from scale,user as u where u.id=scale.user_id and cooperation_id=? and date_format(month,'%y-%d')=date_format(?,'%y-%d') ";
-            return Db.find(sql, cooperationId, CommonUtils.getLastMonth());
         }
 
 
@@ -198,12 +203,16 @@ public class TurnoverService {
     }
 
     /**
-     * @param cooperationId 合作市场的Id
-     * @param num           分成总额
-     * @return 是否修改成功
+     * 检测该该公司该市场该是否已经填写过
+     *
+     * @param cooperationId 合作市场
+     * @param companyId     公司Id
+     * @return 是否填写
      */
-    public boolean saUpdateService(Long cooperationId, Double num) {
-        String sql = "update scale set pay=? where cooperation_id=? and month=? ";
-        return Db.update(sql, num, cooperationId, CommonUtils.getLastMonth()) > 0;
+    public boolean checksService(Long companyId, Long cooperationId) {
+        Date date = CommonUtils.getLastMonth();
+        String sql = "select * from turnover_note where cooperation_id=? and company_id=? and date=?";
+        List<TurnoverNote> turnoverNoteList = TurnoverNote.dao.find(sql, cooperationId, companyId, date);
+        return turnoverNoteList.isEmpty();
     }
 }

@@ -1,6 +1,5 @@
 package com.pay.admin.action;
 
-import cn.hutool.core.util.StrUtil;
 import com.jfinal.aop.Before;
 import com.jfinal.core.paragetter.Para;
 import com.jfinal.plugin.activerecord.Record;
@@ -41,21 +40,11 @@ public class DepartmentAction extends BaseController {
 
     /**
      * 修改部门或者职位名称
-     *
-     * @param id   id
-     * @param name 新名称
      */
     @Before(Put.class)
-    public void update(Long id, String name) {
-        if (id == null || StrUtil.isBlank(name)) {
-            error("修改的Id不正确");
-        } else {
-            Record record = new Record();
-            record.set("id", id);
-            record.set("name", name);
-            result(departmentService.updateService(record), "修改失败");
-        }
-
+    public void update() {
+        Record record = getRecordPara();
+        result(departmentService.updateService(record), "修改失败");
     }
 
     /**
@@ -68,7 +57,12 @@ public class DepartmentAction extends BaseController {
         if (id == null) {
             error("请求参数不正确");
         } else {
-            result(departmentService.deleteService(id), "删除失败");
+            try {
+                result(departmentService.deleteService(id), "删除失败");
+            } catch (Exception e) {
+                e.printStackTrace();
+                error("该部门或者职位已有员工,不能删除");
+            }
         }
     }
 

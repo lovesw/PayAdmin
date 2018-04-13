@@ -7,6 +7,7 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.activerecord.dialect.MysqlDialect;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.plugin.ehcache.EhCachePlugin;
+import com.jfinal.render.ViewType;
 import com.jfinal.template.Engine;
 import com.pay.admin.config.AdminRoutes;
 import com.pay.data.interceptors.ExceptionInterceptor;

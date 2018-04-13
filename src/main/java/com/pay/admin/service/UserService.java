@@ -2,8 +2,10 @@ package com.pay.admin.service;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.SecureUtil;
+import com.jfinal.aop.Before;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
+import com.jfinal.plugin.activerecord.tx.Tx;
 import com.pay.user.model.User;
 import com.pay.user.model.UserInfo;
 
@@ -33,6 +35,7 @@ public class UserService {
      * @param user 员工信息
      * @return 操作结果
      */
+    @Before(Tx.class)
     public boolean addService(User user) {
         user.setPassword(SecureUtil.md5("123456"));
         user.setDate(new Date());
@@ -91,4 +94,25 @@ public class UserService {
         }
         return Db.update("user", "id", record);
     }
+
+    /***
+     * 获取部门信息
+     * @return 部门信息列表
+     */
+    public List<Record> dListService() {
+        String sql = "select id,name from department where type=true";
+        return Db.find(sql);
+    }
+
+    /***
+     * 通过指定的部门信息获取下面的职位信息
+     * @param pid 部门id
+     * @return 职位信息列表
+     */
+    public List<Record> pListService(Long pid) {
+        String sql = "select id,name from department where type=false and pid=?";
+        return Db.find(sql, pid);
+    }
+
+
 }

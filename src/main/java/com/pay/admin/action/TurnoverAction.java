@@ -1,8 +1,6 @@
 package com.pay.admin.action;
 
 import cn.hutool.core.util.StrUtil;
-import cn.hutool.json.JSONArray;
-import cn.hutool.json.JSONUtil;
 import com.jfinal.aop.Before;
 import com.jfinal.aop.Duang;
 import com.jfinal.plugin.activerecord.Record;
@@ -13,6 +11,7 @@ import com.pay.data.entity.TurnoverEntity;
 import com.pay.data.interceptors.Get;
 import com.pay.data.interceptors.Post;
 import com.pay.data.interceptors.Put;
+import com.pay.data.utils.CommonUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,14 +45,14 @@ public class TurnoverAction extends BaseController {
             error("参数传递不正确");
         } else {
             //将jsonArray转为TurnoverEntity集合
-            List<TurnoverEntity> list = json(str, TurnoverEntity.class);
+            List<TurnoverEntity> list = CommonUtils.strJsonToBean(str, TurnoverEntity.class);
             boolean bool = turnoverService.addService(list, cooperationId);
             result(bool, "添加失败");
         }
     }
 
     /**
-     * 检测该月该市场是否已经提交过
+     * 检测该月该市场是否已经提交过(主题分成)
      *
      * @param cooperationId 市场Id
      */
@@ -64,7 +63,20 @@ public class TurnoverAction extends BaseController {
         } else {
             success(turnoverService.checkService(cooperationId));
         }
+    }
 
+    /**
+     * 检测该该公司该市场该是否已经填写过
+     *
+     * @param cooperationId 合作市场
+     * @param companyId     公司Id
+     */
+    public void checks(Long cooperationId, Long companyId) {
+        if (cooperationId == null || companyId == null) {
+            error("查询参数不能为空");
+        } else {
+            success(turnoverService.checksService(companyId, cooperationId));
+        }
     }
 
     /**
@@ -94,14 +106,14 @@ public class TurnoverAction extends BaseController {
      * @param money         分配的金额
      */
     @Before(Post.class)
-    public void sAdd(String str, Long cooperationId, Double money) {
+    public void sAdd(String str, Long companyId, Long cooperationId, Double money) {
 
-        if (StrUtil.isBlank(str) || cooperationId == null || money <= 0) {
+        if (StrUtil.isBlank(str) || cooperationId == null || money <= 0 || companyId == null) {
             error("参数传递不正确");
         } else {
             //将jsonArray转为TurnoverEntity集合
-            List<ScaleEntity> list = json(str, ScaleEntity.class);
-            boolean bool = turnoverService.sAddService(list, cooperationId, money);
+            List<ScaleEntity> list = CommonUtils.strJsonToBean(str, ScaleEntity.class);
+            boolean bool = turnoverService.sAddService(list, companyId, cooperationId, money);
             result(bool, "添加失败");
         }
     }
@@ -110,11 +122,11 @@ public class TurnoverAction extends BaseController {
      * 查看指定的市场的分成信息
      */
     @Before(Get.class)
-    public void sList(Long cooperationId) {
-        if (cooperationId == null) {
-            error("合作市场不正确");
+    public void sList(Long companyId, Long cooperationId) {
+        if (cooperationId == null || companyId == null) {
+            error("查询参数不正确");
         } else {
-            success(turnoverService.sListService(cooperationId));
+            success(turnoverService.sListService(companyId, cooperationId));
         }
     }
 
@@ -127,7 +139,7 @@ public class TurnoverAction extends BaseController {
             error("修改参数不正确");
         } else {
             //获取json的list实体对象
-            List<TurnoverEntity> list = json(str, TurnoverEntity.class);
+            List<TurnoverEntity> list = CommonUtils.strJsonToBean(str, TurnoverEntity.class);
             //批量修改集合对象
             List<Record> recordList = new ArrayList<>(list.size());
             //比例校验
@@ -154,31 +166,5 @@ public class TurnoverAction extends BaseController {
         }
     }
 
-    /**
-     * 修改总的该市场该月的分成总额   department
-     *
-     * @param cooperationId 市场的Id
-     * @param num           修改后的分成总额
-     */
-    @Before(Put.class)
-    public void saUpdate(Long cooperationId, Double num) {
-        if (cooperationId == null || num == null || num <= 0) {
-            error("修改参数不正确");
-        } else {
-            result(turnoverService.saUpdateService(cooperationId, num), "修改失败");
-        }
-    }
-
-    /**
-     * @param str Json格式的字符串
-     * @param t   T class类型
-     * @param <T> 泛型T
-     * @return json实体解析集合
-     */
-    private <T> List<T> json(String str, Class<T> t) {
-        JSONArray jsonArray = JSONUtil.parseArray(str);
-        //将jsonArray转为TurnoverEntity集合
-        return JSONUtil.toList(jsonArray, t);
-    }
 
 }

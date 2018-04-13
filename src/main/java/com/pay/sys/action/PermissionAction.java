@@ -26,6 +26,7 @@ import java.util.Map;
  * @description: 权限管理，主要是对权限，角色，进行管理
  */
 public class PermissionAction extends BaseController {
+
     private final PermissionService permissionService = Duang.duang(PermissionService.class);
 
 
