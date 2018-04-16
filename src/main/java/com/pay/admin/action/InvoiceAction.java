@@ -2,7 +2,6 @@ package com.pay.admin.action;
 
 import cn.hutool.core.codec.Base64;
 import cn.hutool.core.convert.Convert;
-import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
 import com.jfinal.aop.Before;
 import com.jfinal.core.paragetter.Para;
@@ -13,11 +12,10 @@ import com.pay.data.interceptors.Delete;
 import com.pay.data.interceptors.Get;
 import com.pay.data.interceptors.Post;
 import com.pay.data.interceptors.Put;
+import com.pay.data.utils.CommonUtils;
 import com.pay.data.utils.FieldUtils;
 import com.pay.data.utils.FileImageUtils;
 import com.pay.user.model.Invoice;
-
-import java.util.Date;
 
 /**
  * @createTime: 2018/3/8
@@ -36,8 +34,7 @@ public class InvoiceAction extends BaseController {
         if (StrUtil.isBlank(billMonth)) {
             error("指定的月份不正确");
         } else {
-            Date date = DateUtil.parseDate(billMonth + "-01");
-            success(invoiceService.listService(date));
+            success(invoiceService.listService(CommonUtils.getOneMonth(billMonth)));
         }
     }
 
@@ -53,7 +50,7 @@ public class InvoiceAction extends BaseController {
     public void add(UploadFile image, @Para("") Invoice invoice, int type) {
         if (image != null && FileImageUtils.iconUtils(image.getOriginalFileName())) {
             //设置月份，将传入的月份自动格式化为月的第一日
-            invoice.setBillMonth(DateUtil.parseDate(getPara("billMonth") + "-01"));
+            invoice.setBillMonth(CommonUtils.getOneMonth(getPara("billMonth")));
             //去掉tariff的%
             String tariff = getPara("tariff");
             invoice.setTariff(Convert.toFloat(StrUtil.removeSuffix(tariff, "%")));

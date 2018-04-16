@@ -108,7 +108,7 @@ public class PermissionAction extends BaseController {
         Long[] menuId = getParaValuesToLong("menuId[]");
         //2:获取权限的所有Id
         Long[] permissionId = getParaValuesToLong("permissionId[]");
-        if (StrUtil.isBlank(roleId.toString()) || menuId == null || menuId.length < 1 || permissionId == null || permissionId.length < 1) {
+        if (roleId==null || menuId == null || menuId.length < 1 || permissionId == null || permissionId.length < 1) {
             result(false, "授权参数不正确");
         }
         boolean bool;

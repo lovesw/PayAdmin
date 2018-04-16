@@ -29,8 +29,7 @@ public class ProportionAction extends BaseController {
         if (StrUtil.isBlank(date)) {
             error("查询参数不正确");
         } else {
-            Date date1 = DateUtil.parseDate(date + "-01");
-            success(proportionService.listService(date1));
+            success(proportionService.listService(CommonUtils.getOneMonth(date)));
         }
     }
 

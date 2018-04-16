@@ -30,11 +30,21 @@ public class CommonUtils {
     /***
      *
      * 获取每个月的1号
-     * @return
+     * @return 每个月1号的日期
      */
     public static Date getOneMonth() {
         String dateStr = DateUtil.format(new Date(), "yyyy-MM") + "-01";
         return DateUtil.parse(dateStr);
+    }
+
+    /**
+     * 将指定的年月格式化为年月日
+     *
+     * @param month 年月，如：2018-08格式
+     * @return 指定年月的1号
+     */
+    public static Date getOneMonth(String month) {
+        return DateUtil.parse(month + "-01", "yyyy-MM-dd");
     }
 
     /**
@@ -64,6 +74,30 @@ public class CommonUtils {
         return JSONUtil.toList(jsonArray, t);
     }
 
+    /**
+     * 工资查看的sql 语句
+     *
+     * @return 拼接好的SQL，如果有其他条件，直接走后拼接
+     */
+    public static String salarySql() {
+        //应该发的
+        String shout_count = "(base_pay + work_reward+achievements+reward+house+other) ";
+        //应该扣的
+        String take_count = "(take+take_error+take_other+s.social)  ";
+        //数据库sql
+        String sql = "select u.name ,s.* ,";
+        //应发合计
+        sql += shout_count + "as should_count,";
+        //应扣合计
+        sql += take_count + "as take_count,";
+        //申报工资
+        sql += "(" + shout_count + "-(take+take_error+take_other)) as submit_money,";
+        //实际发工资
+        sql += "(" + shout_count + "-" + take_count + ") as actual_money";
+
+        sql += " from user as u  left join salary as s  on s.user_id=u.id ";
+        return sql;
+    }
 
     /**
      * 工资指定月没有填写的处理，将没有填写基本工资的人处理为0
@@ -135,6 +169,6 @@ public class CommonUtils {
             tax = (money - 58500) * 0.35f + (58500 - 38500) * 0.3f + (38500 - 12500) * 0.25f + (12500 - 8000) * 0.2f + (8000 - 5000) * 0.1f + (5000 - 3500) * 0.03f;
         else
             tax = (money - 83500) * 0.45f + (83500 - 58500) * 0.35f + (58500 - 38500) * 0.3f + (38500 - 12500) * 0.25f + (12500 - 8000) * 0.2f + (8000 - 5000) * 0.1f + (5000 - 3500) * 0.03f;
-        return Double.valueOf(NumberUtil.roundStr(tax, 2));
+        return Convert.toDouble(NumberUtil.roundStr(tax, 2));
     }
 }

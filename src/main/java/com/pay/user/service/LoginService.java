@@ -50,7 +50,7 @@ public class LoginService {
      * @return 返回该用户的全部菜单权限
      */
     public List<Menu> findMenuService(String username) {
-        String sql = "select * from menu where id in (select mid from role_menu where role_id in (select role_id from user_role where user_id=? ))";
+        String sql = "select * from menu where id in (select mid from role_menu where role_id in (select role_id from user_role where user_id=? )) order by id ";
         return Menu.dao.find(sql, username);
     }
 

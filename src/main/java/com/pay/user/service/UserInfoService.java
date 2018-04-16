@@ -27,7 +27,7 @@ public class UserInfoService {
      * 通过用户Id返回用户名称
      *
      * @param userId 员工编号
-     * @return
+     * @return 用户信息
      */
     public User userNameService(String userId) {
         return User.dao.findById(userId);
@@ -64,8 +64,7 @@ public class UserInfoService {
      * @return 返回员工的全部信息
      */
     public Object userInfoAllService(String userId) {
-        String sql = "select  u.* ,uf.* from user as u LEFT JOIN user_info as uf on uf.user_id=u.id and u.id=? where u.id=?";
-        String sql1 = "select  u.*,(select name from department as d where d.id=u.department) as department,(select name from department as d where d.id=u.position) as position ,uf.* from user as u LEFT JOIN user_info as uf on uf.user_id=u.id and u.id=? where u.id=?";
+        String sql1 = "select  u.*,(select name from department as d where d.id=u.department) as dname,(select name from department as d where d.id=u.position) as pname ,uf.* from user as u LEFT JOIN user_info as uf on uf.user_id=u.id and u.id=? where u.id=?";
         return Db.find(sql1, userId, userId);
 
     }
@@ -145,5 +144,35 @@ public class UserInfoService {
     public boolean updateCardService(UploadFile card1, String cardName1, UploadFile card2, String cardName2) {
         return card1 != null && card2 != null && FileImageUtils.iconUtils(card1.getOriginalFileName()) && FileImageUtils.saveImageUtils(card1, cardName1, FieldUtils.CARD) && FileImageUtils.iconUtils(card2.getOriginalFileName()) && FileImageUtils.saveImageUtils(card2, cardName2, FieldUtils.CARD);
 
+    }
+
+    /**
+     * 指定年的工资
+     *
+     * @param year   年
+     * @param userId 员工编号
+     * @return 工资列表
+     */
+    public List<Record> salaryService(String year, String userId) {
+        //应该发的
+        String shout_count = "(base_pay + work_reward+achievements+reward+house+other) ";
+        //应该扣的
+        String take_count = "(take+take_error+take_other+s.social)  ";
+        //数据库sql
+        String sql = "select s.* ,";
+        //应发合计
+        sql += shout_count + "as should_count,";
+        //应扣合计
+        sql += take_count + "as take_count,";
+        //申报工资
+        sql += "(" + shout_count + "-(take+take_error+take_other)) as submit_money,";
+        //实际发工资
+        sql += "(" + shout_count + "-" + take_count + ") as actual_money";
+
+        sql += " from  salary as s  where  user_id=? and year(date)=?";
+
+        List<Record> list = Db.find(sql, userId, year);
+        //处理工资列表，税计算，没有填写的计算等
+        return CommonUtils.taxUtil(CommonUtils.salaryUtil(list));
     }
 }

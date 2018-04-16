@@ -4,9 +4,11 @@ import cn.hutool.core.codec.Base64;
 import com.jfinal.aop.Before;
 import com.jfinal.plugin.activerecord.Record;
 import com.jfinal.upload.UploadFile;
+import com.pay.admin.service.SalaryService;
 import com.pay.data.controller.BaseController;
 import com.pay.data.interceptors.Get;
 import com.pay.data.interceptors.Post;
+import com.pay.data.utils.CommonUtils;
 import com.pay.data.utils.FieldUtils;
 import com.pay.data.utils.FileImageUtils;
 import com.pay.user.model.User;
@@ -115,6 +117,27 @@ public class UserInfoAction extends BaseController {
     public void updateCard(UploadFile card1, UploadFile card2) {
         String userId = getUserId();
         result(userInfoService.updateCardService(card1, userId + CARD1, card2, userId + CARD2), "证件照上传失败");
+    }
+
+    /**
+     * 用户查看自己的工资
+     */
+    @Before(Get.class)
+    public void salary(String year) {
+        success(userInfoService.salaryService(year, getUserId()));
+
+    }
+
+
+    /**
+     * 用户查看指定月的指定绩效
+     *
+     * @param month 指定的年月
+     */
+    public void achievements(String month) {
+        SalaryService salaryService = new SalaryService();
+        success(salaryService.acountService(getUserId(), CommonUtils.getOneMonth(month)));
+
     }
 
 }

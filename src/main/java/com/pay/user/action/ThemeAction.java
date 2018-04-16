@@ -1,6 +1,5 @@
 package com.pay.user.action;
 
-import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONUtil;
@@ -13,10 +12,10 @@ import com.pay.data.interceptors.Get;
 import com.pay.data.interceptors.PermissionInterceptor;
 import com.pay.data.interceptors.Post;
 import com.pay.data.interceptors.Put;
+import com.pay.data.utils.CommonUtils;
 import com.pay.user.model.Theme;
 import com.pay.user.service.ThemeService;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -62,8 +61,7 @@ public class ThemeAction extends BaseController {
             error("查询参数不正确");
         } else {
             String userId = getUserId();
-            Date date1 = DateUtil.parseDate(date + "-01");
-            success(themeService.listService(date1, userId));
+            success(themeService.listService(CommonUtils.getOneMonth(date), userId));
         }
     }
 
@@ -76,8 +74,7 @@ public class ThemeAction extends BaseController {
             error("查询参数不正确");
         } else {
             String userId = getUserId();
-            Date date1 = DateUtil.parseDate(date + "-01");
-            success(themeService.allListService(date1, userId));
+            success(themeService.allListService(CommonUtils.getOneMonth(date), userId));
         }
     }
 
